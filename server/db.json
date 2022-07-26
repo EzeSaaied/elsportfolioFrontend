@@ -1,0 +1,125 @@
+{
+    "estudios": [
+      {
+        "id": 1,
+        "titulo": "Full Stack Developer Jr.",
+        "institucion": "Argentina Programa",
+        "logo": "logo123.jpg",
+        "periodo": "2021-2022",
+        "descripcion": "Descripcio descripcion descripcion",
+        "certificado": "certificado123.jpg"
+      },
+      {
+        "id": 2,
+        "titulo": "Full Stack Developer Jr.",
+        "institucion": "Codo a Codo",
+        "logo": "logo123.jpg",
+        "periodo": "2022",
+        "descripcion": "Descripcio descripcion descripcion",
+        "certificado": "certificado123.jpg"
+      },
+      {
+        "id": 3,
+        "titulo": "Tester QA",
+        "institucion": "Codo a Codo",
+        "logo": "logo123.jpg",
+        "periodo": "2021",
+        "descripcion": "Descripcio descripcion descripcion",
+        "certificado": "certificado123.jpg"
+      },
+      {
+        "id": 4,
+        "titulo": "Tester Automation",
+        "institucion": "Udemy",
+        "logo": "logo123.jpg",
+        "periodo": "2021",
+        "descripcion": "Descripcio descripcion descripcion",
+        "certificado": "certificado123.jpg"
+      }
+    ],
+    "skills": [
+      {
+        "id": 1,
+        "skill": "HTML",
+        "tipo": "Hard Skill",
+        "maestria": "7/10",
+        "logo": "logo123.jpg"
+      },
+      {
+        "id": 2,
+        "skill": "CSS",
+        "tipo": "Hard Skill",
+        "maestria": "7/10",
+        "logo": "logo123.jpg"
+      },
+      {
+        "id": 3,
+        "skill": "Javascript",
+        "tipo": "Hard Skill",
+        "maestria": "7/10",
+        "logo": "logo123.jpg"
+      },
+      {
+        "id": 4,
+        "skill": "Java",
+        "tipo": "Hard Skill",
+        "maestria": "7/10",
+        "logo": "logo123.jpg"
+      },
+      {
+        "id": 5,
+        "skill": "Python",
+        "tipo": "Hard Skill",
+        "maestria": "7/10",
+        "logo": "logo123.jpg"
+      }
+    ],
+    "proyectos": [
+      {
+        "id": 1,
+        "nombre": "Game Over Cyber Bar",
+        "descripcion": "Proyecto de frontend para Codo a Codo, esta armado con HTML, CSS y Javascript",
+        "periodo": "2022",
+        "url": "https://GameOver.ezequielsaaied.repl.co"
+      },
+      {
+        "id": 2,
+        "nombre": "Portfolio personal",
+        "descripcion": "Proyecto final para Argentina Programa, esta armado con Angular en el frontend y Java para backend",
+        "periodo": "2022",
+        "url": "Esta pagina"
+      }
+    ],
+    "experiencia": [
+      {
+        "id": 1,
+        "cargo": "Vigilador general",
+        "empresa": "Maguen Seguridad",
+        "logo": "logo123.jpg",
+        "periodo": "2020-2021",
+        "descripcion": "Ejerci tareas de vigilador general en el Museo Nacional de Bellas Artes"
+      },
+      {
+        "id": 1,
+        "cargo": "Encargado",
+        "empresa": "Rekt Drugstore",
+        "logo": "logo123.jpg",
+        "periodo": "2016-2018",
+        "descripcion": "Ejerci tareas de encargado, llevando control de caja, pedido de mercaderias y contacto con proveedores"
+      }
+    ],
+    "inicio": [
+      {
+        "profilepic": "profilepic123.jpg",
+        "nombre": "Ezequiel Lopez Saaied",
+        "titulo": "Full Stack Developer Jr.",
+        "aboutme": "Soy de Mar del Plata, Argentina y tengo 26 años. Aficionado a las computadoras desde pequeño, con el tiempo me llevo a aprenender programacion por diversion y en diferentes lenguajes como Python, Javascript y Ruby. Soy alguien creativo que le encanta encontrar nuevos desafios y aprender cosas nuevas."
+      }
+    ],
+    "login": [
+      {
+        "usuario": "admin",
+        "password": "admin123"
+      }
+    ]
+  }
