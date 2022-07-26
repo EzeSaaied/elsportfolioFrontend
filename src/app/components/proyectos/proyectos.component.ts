@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Proyectos } from '../../interfaces/proyectos.interface'
+import { ProyectosService } from '../../services/proyectos.service';
+import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-proyectos',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor() { }
+  proyectos: Proyectos[] = [];
+
+  constructor(private proyectosSvc: ProyectosService) { }
 
   ngOnInit(): void {
+    this.proyectosSvc.getProyectos()
+    .pipe(
+      tap( proyectos => this.proyectos = proyectos)
+    )
+    .subscribe();
   }
 
 }
