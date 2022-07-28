@@ -1,10 +1,10 @@
 <div class="form-cont">
     <form [formGroup]="form" class="form" (ngSubmit)="onLogin($event)">
         <div class="input-cont">
-            <label for="">
+            <label for="username">
                 Username:
             </label>
-            <input formControlName="username" type="text" name="username" id="username"
+            <input formControlName="username" type="text" name="username"
             [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}">
         </div>
         <div *ngIf="Username?.errors && Username?.touched" class="input-cont error-msg">
@@ -13,10 +13,10 @@
             </p>
         </div>
         <div class="input-cont">
-            <label for="">
+            <label for="password">
                 Password:
             </label>
-            <input formControlName="password" type="password" name="password" id="password"
+            <input formControlName="password" type="password" name="password"
             [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
         </div>
         <div *ngIf="Password?.errors && Password?.touched" class="input-cont error-msg">
@@ -28,7 +28,7 @@
             </p>
         </div>
         <div class="input-cont">
-            <input type="submit" name="submit" id="submit" value="Login">
+            <input type="submit" name="submit" value="Login">
         </div>
     </form>
 </div>

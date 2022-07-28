@@ -19,6 +19,7 @@ import { ExperienciaItemComponent } from './components/experiencia-item/experien
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InterceptorService } from './services/interceptor.service';
+import { SkillsFormComponent } from './components/skills-form/skills-form.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { InterceptorService } from './services/interceptor.service';
     ProyectosItemComponent,
     ExperienciaItemComponent,
     LoginComponent,
+    SkillsFormComponent,
   ],
   imports: [
     BrowserModule,

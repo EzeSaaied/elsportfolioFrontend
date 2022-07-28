@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/interfaces/skills.interface';
 import { SkillsService } from '../../services/skills.service'
 import { tap } from "rxjs/operators"
@@ -8,9 +8,7 @@ import { tap } from "rxjs/operators"
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit {
-
-  @Input() 
+export class SkillsComponent implements OnInit { 
 
   skills: Skills[] = [];
 

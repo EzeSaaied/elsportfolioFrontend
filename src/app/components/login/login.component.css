@@ -34,16 +34,3 @@
 input {
     border-color: black;
 }
-
-.is-invalid {
-    border-color: red;
-}
-
-.is-valid {
-    border-color: lightgreen;
-}
-
-.error-msg {
-    color: rgb(252, 69, 69);
-    font-size: 0.8rem;
-}

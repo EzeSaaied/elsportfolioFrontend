@@ -1,0 +1,59 @@
+<div class="form-cont">
+    <form [formGroup]="form" (ngSubmit)="onCreate($event)">
+        <div>
+            <label for="skill">
+                Habilidad:
+            </label>
+            <input formControlName = "skill" type="text" name="skill">
+        </div>
+        <div *ngIf="Skill?.errors && Skill?.touched" class="error-msg">
+            <p *ngIf="Skill?.hasError('required')">
+                La habilidad es requerida.
+            </p>
+        </div>
+        <div>
+            <label for="tipo">
+                Tipo de habilidad:
+            </label>
+            <select formControlName="tipo" name="tipo">
+                <option value="Hard Skill">Hard Skill</option>
+                <option value="Soft Skill">Soft Skill</option>
+            </select>
+        </div>
+        <div *ngIf="Tipo?.errors && Tipo?.touched" class="error-msg">
+            <p *ngIf="Tipo?.hasError('required')">
+                El tipo es requerido.
+            </p>
+        </div>
+        <div>
+            <label for="maestria">
+                Manejo de la habilidad:
+            </label>
+            <select formControlName="maestria" name="maestria" placeholder="">
+                <option *ngFor="let num of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [ngValue]="num">{{num}}</option>
+            </select>
+        </div>
+        <div *ngIf="Maestria?.errors && Maestria?.touched" class="error-msg">
+            <p *ngIf="Maestria?.hasError('required')">
+                El manejo de la habilidad es requerido.
+            </p>
+            <p *ngIf="Maestria?.hasError('min') || Maestria?.hasError('max')">
+                El manejo de la habilidad debe ser entre 0 y 10.
+            </p>
+        </div>
+        <div>
+            <label for="logo">
+                Logo:
+            </label>
+            <input formControlName = "logo" type="text" name="logo">
+        </div>
+        <div *ngIf="Logo?.errors && Logo?.touched" class="error-msg">
+            <p *ngIf="Logo?.hasError('required')">
+                El logo es requerido.
+            </p>
+        </div>
+        <div>
+            <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid">
+        </div>
+    </form>
+</div>

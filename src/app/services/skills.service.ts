@@ -21,4 +21,8 @@ export class SkillsService {
     return this.http.delete(this.apiURL + "borrar/" + skill.id_skills);
   }
 
+  createSkill(skill: any):Observable<any> {
+    return this.http.post(this.apiURL + "crear", skill);
+  }
+
 }
