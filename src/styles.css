@@ -6,3 +6,15 @@
     padding: 0;
     font-family: 'Kalam', cursive;
 }
+
+.del-button {
+    font-size: 25px;
+    color: red;
+    margin: 5px;
+}
+
+.edit-button {
+    font-size: 25px;
+    color: purple;
+    margin: 5px;
+}
