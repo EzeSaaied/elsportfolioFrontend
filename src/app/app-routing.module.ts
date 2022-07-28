@@ -5,11 +5,16 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: InicioComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'estudios',

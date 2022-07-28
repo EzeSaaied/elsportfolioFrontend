@@ -13,9 +13,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { ExperienciaItemComponent } from './components/experiencia-item/experien
     ProyectosComponent,
     ProyectosItemComponent,
     ExperienciaItemComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

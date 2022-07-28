@@ -7,10 +7,13 @@ import { Experiencia } from '../interfaces/experiencia.interface'
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiURL = "http://localhost:8080/experiencia/traer";
+
+  private publicApiURL = "http://localhost:8080/public/traer/experiencia";
+  private apiURL = "http://localhost:8080/api/experiencia/";
+
   constructor(private http: HttpClient) { }
 
   getExperiencia():Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>(this.apiURL);
+    return this.http.get<Experiencia[]>(this.publicApiURL);
   }
 }

@@ -7,10 +7,13 @@ import { Skills } from '../interfaces/skills.interface';
   providedIn: 'root'
 })
 export class SkillsService {
-  private apiURL = "http://localhost:8080/skills/traer"
+
+  private publicApiURL = "http://localhost:8080/public/traer/skills";
+  private apiURL = "http://localhost:8080/api/skills/";
+
   constructor(private http: HttpClient) { }
 
   getSkills():Observable<Skills[]>{
-    return this.http.get<Skills[]>(this.apiURL);
+    return this.http.get<Skills[]>(this.publicApiURL);
   }
 }

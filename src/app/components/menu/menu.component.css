@@ -38,13 +38,13 @@
     list-style-type: none;
 }
 
-.logout-btn-cont {
+.login-btn-cont {
     height: 50px;
     width: 120px;
     align-items: center;
 }
 
-#logout-btn {
+#login-btn {
     display: block;
     text-align: center;
     justify-content: center;

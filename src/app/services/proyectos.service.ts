@@ -7,10 +7,13 @@ import { Proyectos } from '../interfaces/proyectos.interface'
   providedIn: 'root'
 })
 export class ProyectosService {
-  private apiURL = "http://localhost:8080/proyectos/traer";
+
+  private publicApiURL = "http://localhost:8080/public/traer/proyectos";
+  private apiURL = "http://localhost:8080/api/proyectos/";
+
   constructor(private http: HttpClient) { }
 
   getProyectos():Observable<Proyectos[]>{
-    return this.http.get<Proyectos[]>(this.apiURL);
+    return this.http.get<Proyectos[]>(this.publicApiURL);
   }
 }

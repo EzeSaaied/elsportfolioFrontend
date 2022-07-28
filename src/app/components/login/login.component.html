@@ -1,0 +1,34 @@
+<div class="form-cont">
+    <form [formGroup]="form" class="form" (ngSubmit)="onLogin($event)">
+        <div class="input-cont">
+            <label for="">
+                Username:
+            </label>
+            <input formControlName="username" type="text" name="username" id="username"
+            [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}">
+        </div>
+        <div *ngIf="Username?.errors && Username?.touched" class="input-cont error-msg">
+            <p *ngIf="Username?.hasError('required')">
+                El usuario es requerido.
+            </p>
+        </div>
+        <div class="input-cont">
+            <label for="">
+                Password:
+            </label>
+            <input formControlName="password" type="password" name="password" id="password"
+            [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
+        </div>
+        <div *ngIf="Password?.errors && Password?.touched" class="input-cont error-msg">
+            <p *ngIf="Password?.hasError('required')">
+                La contraseña es requerida.
+            </p>
+            <p *ngIf="Password?.hasError('minlength')">
+                La contraseña debe contener por lo menos 8 caracteres.
+            </p>
+        </div>
+        <div class="input-cont">
+            <input type="submit" name="submit" id="submit" value="Login">
+        </div>
+    </form>
+</div>
