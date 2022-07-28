@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Skills } from '../../interfaces/skills.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
@@ -14,10 +14,16 @@ export class SkillsItemComponent implements OnInit {
   faSquareXmark = faSquareXmark;
 
   @Input() skill!: Skills;
+  @Output() onDeleteSkill: EventEmitter<Skills> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(skill: Skills) {
+    console.log(skill + "SKILL ITEM");
+    this.onDeleteSkill.emit(skill);
   }
 
 }

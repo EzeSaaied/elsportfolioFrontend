@@ -1,7 +1,7 @@
 export interface Skills {
-    id?: number;
+    id_skills: number;
     skill: string;
     tipo: string;
-    maestria: string;
+    maestria: number;
     logo: string;
 }

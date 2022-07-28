@@ -1,8 +1,9 @@
 export interface Experiencia {
-    id?: number;
+    id_experiencia: number;
     cargo: string;
     empresa: string;
     logo: string;
-    periodo: string;
+    aInicio: number;
+    aFinal: number;
     descripcion: string;
 }

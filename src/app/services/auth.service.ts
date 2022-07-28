@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     console.log('AuthService');
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')|| "{}"));
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || "{}"));
   }
 
   LogIn(credentials: any): Observable<any> {

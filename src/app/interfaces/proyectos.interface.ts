@@ -1,7 +1,8 @@
 export interface Proyectos {
-    id?: number;
+    id_proyectos: number;
     nombre: string;
     descripcion: string;
-    periodo: string;
+    aInicio: number;
+    aFinal: number;
     url: string;
 }

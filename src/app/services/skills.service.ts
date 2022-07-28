@@ -16,4 +16,9 @@ export class SkillsService {
   getSkills():Observable<Skills[]>{
     return this.http.get<Skills[]>(this.publicApiURL);
   }
+
+  deleteSkill(skill: Skills):Observable<any> {
+    return this.http.delete(this.apiURL + "borrar/" + skill.id_skills);
+  }
+
 }

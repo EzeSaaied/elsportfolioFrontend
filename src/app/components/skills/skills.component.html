@@ -1,2 +1,2 @@
-<app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" >
+<app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" (onDeleteSkill)="deleteSkill($event)">
 </app-skills-item>

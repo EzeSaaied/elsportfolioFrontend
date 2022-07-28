@@ -1,7 +1,8 @@
 <div class="skills-item">
+    {{skill.skill}} <br>
     {{skill.maestria}} <br>
     {{skill.tipo}}<br>
-    {{skill.skill}}
+    {{skill.logo}}
     <fa-icon class="edit-button" [icon]="faSquarePen"></fa-icon>
-    <fa-icon class="del-button" [icon]="faSquareXmark"></fa-icon>
+    <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(skill)"></fa-icon>
 </div>
