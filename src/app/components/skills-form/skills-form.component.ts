@@ -48,7 +48,9 @@ export class SkillsFormComponent implements OnInit {
     event.preventDefault;
     this.skillsSvc.createSkill(this.form.value).subscribe(data => {
       console.log(JSON.stringify(data));
-      this.router.navigate(["/skills"])
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate(["/skills"]);
     })
+  })
   }
-}
+  }

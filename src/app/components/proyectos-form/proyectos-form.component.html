@@ -1,1 +1,68 @@
-<p>proyectos-form works!</p>
+<div class="form-cont">
+    <form [formGroup]="form" (ngSubmit)="onCreate($event)">
+        <div>
+            <label for="nombre">
+                Nombre:
+            </label>
+            <input formControlName = "nombre" type="text" name="nombre">
+        </div>
+        <div *ngIf="Nombre?.errors && Nombre?.touched" class="error-msg">
+            <p *ngIf="Nombre?.hasError('required')">
+                El nombre es requerido.
+            </p>
+        </div>
+        <div>
+            <label for="descripcion">
+                Descripcion:
+            </label>
+            <input formControlName = "descripcion" type="text" name="descripcion">
+        </div>
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched" class="error-msg">
+            <p *ngIf="Descripcion?.hasError('required')">
+                La descripcion es requerida.
+            </p>
+        </div>
+        <div>
+            <label for="aInicio">
+                Año de Inicio:
+            </label>
+            <input formControlName = "aInicio" type="number" name="aInicio" min="1996" max="2022">
+        </div>
+        <div *ngIf="AInicio?.errors && AInicio?.touched" class="error-msg">
+            <p *ngIf="AInicio?.hasError('required')">
+                El año de inicio es requerido.
+            </p>
+            <p *ngIf="AInicio?.hasError('min') || AInicio?.hasError('max')">
+                El año de inicio debe ser entre 1996 y 2022.
+            </p>
+        </div>
+        <div>
+            <label for="aFinal">
+                Año de Finalizacion:
+            </label>
+            <input formControlName = "aFinal" type="number" name="aFinal" min="1996" max="2022">
+        </div>
+        <div *ngIf="AFinal?.errors && AFinal?.touched" class="error-msg">
+            <p *ngIf="AFinal?.hasError('required')">
+                El año de finalizacion es requerido.
+            </p>
+            <p *ngIf="AFinal?.hasError('min') || AFinal?.hasError('max')">
+                El año de finalicacion debe ser entre 1996 y 2022.
+            </p>
+        </div>
+        <div>
+            <label for="url">
+                Url:
+            </label>
+            <input formControlName = "url" type="url" name="url">
+        </div>
+        <div *ngIf="Url?.errors && Url?.touched" class="error-msg">
+            <p *ngIf="Url?.hasError('required')">
+                La url es requerida.
+            </p>
+        </div>
+        <div>
+            <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid">
+        </div>
+    </form>
+</div>
