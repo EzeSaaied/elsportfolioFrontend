@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Proyectos } from '../interfaces/proyectos.interface'
 
@@ -24,4 +24,15 @@ export class ProyectosService {
   createProyecto(proyecto: any):Observable<any> {
     return this.http.post(this.apiURL + "crear", proyecto);
   }
+
+  editProyecto(proyecto: Proyectos):Observable<any> {
+    let params = new HttpParams()
+  .set('nombre', proyecto.nombre)
+  .set('descripcion', proyecto.descripcion)
+  .set('aInicio', proyecto.aInicio)
+  .set('aFinal', proyecto.aFinal)
+  .set('url', proyecto.url);
+    return this.http.put(this.apiURL + "editar/" + proyecto.id_proyectos, params)
+  }
+
 }

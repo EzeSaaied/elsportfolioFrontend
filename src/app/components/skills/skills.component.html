@@ -1,4 +1,6 @@
 <h1>HABILIDADES</h1> <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()">Nueva Habilidad</button>
 <app-skills-form *ngIf="authSvc.isLoggedIn() && newSkillButton"></app-skills-form>
-<app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" (onDeleteSkill)="deleteSkill($event)">
+<app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" 
+(onDeleteSkill)="deleteSkill($event)" 
+(onEditSkill)="editSkill($event)">
 </app-skills-item>

@@ -37,5 +37,13 @@ export class ProyectosComponent implements OnInit {
   onToggleCreate() {
     this.newProyectoButton = !this.newProyectoButton;
   }
+  
+  editProyecto(proyecto: Proyectos){
+    this.proyectosSvc.editProyecto(proyecto)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe();
+  }
 
 }

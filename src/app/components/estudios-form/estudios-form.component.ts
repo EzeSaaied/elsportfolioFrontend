@@ -12,7 +12,7 @@ export class EstudiosFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private estudiosSvc: EstudiosService, private router: Router) {
+  constructor( private formBuilder: FormBuilder, private estudiosSvc: EstudiosService, private router: Router) {
 
     this.form = this.formBuilder.group(
       {
@@ -28,7 +28,6 @@ export class EstudiosFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe(console.log);
   }
 
   get Titulo() {

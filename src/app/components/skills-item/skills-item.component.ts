@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Skills } from '../../interfaces/skills.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
@@ -14,16 +15,56 @@ export class SkillsItemComponent implements OnInit {
   faSquarePen = faSquarePen;
   faSquareXmark = faSquareXmark;
 
+  form: FormGroup;
+
+  editSkillButton = false;
+
   @Input() skill!: Skills;
   @Output() onDeleteSkill: EventEmitter<Skills> = new EventEmitter();
+  @Output() onEditSkill: EventEmitter<Skills> = new EventEmitter();
 
-  constructor(protected authSvc: AuthService) { }
+  constructor( private formBuilder: FormBuilder, protected authSvc: AuthService) {
 
-  ngOnInit(): void {
-  }
+  this.form = this.formBuilder.group(
+    {
+      skill: ["", [Validators.required]],
+      tipo: ["", [Validators.required]],
+      maestria: [0, [Validators.required, Validators.min(0), Validators.max(10)]],
+      logo: ["", [Validators.required]]
+    }
+  )
+}
 
-  onDelete(skill: Skills) {
-    this.onDeleteSkill.emit(skill);
-  }
+ngOnInit(): void {
+}
+
+onDelete(skill: Skills) {
+  this.onDeleteSkill.emit(skill);
+}
+
+get Skill() {
+  return this.form.get("skill")
+}
+
+get Tipo() {
+  return this.form.get("tipo")
+}
+
+get Maestria() {
+  return this.form.get("maestria")
+}
+
+get Logo() {
+  return this.form.get("logo")
+}
+
+onEdit(skill: Skills) {
+  this.onEditSkill.emit(skill);
+  this.editSkillButton = !this.editSkillButton;
+}
+
+onToggleEdit() {
+  this.editSkillButton = !this.editSkillButton;
+}
 
 }

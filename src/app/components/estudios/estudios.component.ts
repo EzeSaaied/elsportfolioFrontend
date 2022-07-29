@@ -38,4 +38,12 @@ export class EstudiosComponent implements OnInit {
     this.newStudyButton = !this.newStudyButton;
   }
   
+  editEstudio(estudio: Estudios){
+    this.estudiosSvc.editEstudio(estudio)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe();
+  }
+  
 }

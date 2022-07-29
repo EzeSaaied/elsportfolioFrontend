@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Skills } from '../interfaces/skills.interface';
 
@@ -23,6 +23,15 @@ export class SkillsService {
 
   createSkill(skill: any):Observable<any> {
     return this.http.post(this.apiURL + "crear", skill);
+  }
+
+  editSkill(skill: Skills):Observable<any> {
+    let params = new HttpParams()
+  .set('skill', skill.skill)
+  .set('tipo', skill.tipo)
+  .set('maestria', skill.maestria)
+  .set('logo', skill.logo);
+    return this.http.put(this.apiURL + "editar/" + skill.id_skills, params)
   }
 
 }

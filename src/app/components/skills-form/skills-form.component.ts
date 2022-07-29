@@ -25,7 +25,6 @@ export class SkillsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe(console.log);
   }
 
   get Skill() {

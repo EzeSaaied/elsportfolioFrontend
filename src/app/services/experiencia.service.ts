@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Experiencia } from '../interfaces/experiencia.interface'
 
@@ -23,6 +23,17 @@ export class ExperienciaService {
 
   createExperiencia(experiencia: any):Observable<any> {
     return this.http.post(this.apiURL + "crear", experiencia);
+  }
+
+  editExperiencia(exp: Experiencia):Observable<any> {
+    let params = new HttpParams()
+  .set('cargo', exp.cargo)
+  .set('empresa', exp.empresa)
+  .set('logo', exp.logo)
+  .set('aInicio', exp.aInicio)
+  .set('aFinal', exp.aFinal)
+  .set('descripcion', exp.descripcion);
+    return this.http.put(this.apiURL + "editar/" + exp.id_experiencia, params)
   }
 
 }

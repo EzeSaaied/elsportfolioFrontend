@@ -38,4 +38,12 @@ export class SkillsComponent implements OnInit {
     this.newSkillButton = !this.newSkillButton;
   }
   
+  editSkill(skill: Skills){
+    this.skillsSvc.editSkill(skill)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe();
+  }
+  
 }

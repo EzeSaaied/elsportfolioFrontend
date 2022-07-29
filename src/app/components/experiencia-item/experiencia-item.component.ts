@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Experiencia } from '../../interfaces/experiencia.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
@@ -14,11 +15,27 @@ export class ExperienciaItemComponent implements OnInit {
   faSquarePen = faSquarePen;
   faSquareXmark = faSquareXmark;
 
+  form: FormGroup;
+
+  editExperienciaButton = false;
+
   @Input() experiencia!: Experiencia;
   @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter();
+  @Output() onEditExperiencia: EventEmitter<Experiencia> = new EventEmitter();
 
+  constructor( private formBuilder: FormBuilder, protected authSvc: AuthService) {
 
-  constructor(protected authSvc: AuthService) { }
+    this.form = this.formBuilder.group(
+      {
+        cargo: ["", [Validators.required]],
+        empresa: ["", [Validators.required]],
+        logo: ["", [Validators.required]],
+        aInicio: [0, [Validators.required]],
+        aFinal: [0, [Validators.required]],
+        descripcion: ["", [Validators.required]]
+      }
+    )
+  }
 
   ngOnInit(): void {
   }
@@ -27,4 +44,36 @@ export class ExperienciaItemComponent implements OnInit {
     this.onDeleteExperiencia.emit(experiencia);
   }
 
+  get Cargo() {
+    return this.form.get("cargo")
+  }
+  
+  get Empresa() {
+    return this.form.get("empresa")
+  }
+  
+  get Logo() {
+    return this.form.get("logo")
+  }
+  
+  get AInicio() {
+    return this.form.get("aInicio")
+  }
+  
+  get AFinal() {
+    return this.form.get("aFinal")
+  }
+  
+  get Descripcion() {
+    return this.form.get("descripcion")
+  }
+
+  onEdit(skill: Experiencia) {
+    this.onEditExperiencia.emit(skill);
+    this.editExperienciaButton = !this.editExperienciaButton;
+  }
+  
+  onToggleEdit() {
+    this.editExperienciaButton = !this.editExperienciaButton;
+  }
 }

@@ -26,7 +26,6 @@ export class ProyectosFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe(console.log);
   }
 
   get Nombre() {

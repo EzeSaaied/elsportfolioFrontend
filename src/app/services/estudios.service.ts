@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Estudios } from '../interfaces/estudios.interface'
 
@@ -25,7 +25,16 @@ export class EstudiosService {
     return this.http.post(this.apiURL + "crear", estudio);
   }
 
-  updateEstudio(estudio: Estudios): Observable<Estudios> {
-    return this.http.put<Estudios>(this.apiURL + "editar/" + estudio.id_estudios, estudio)
+  editEstudio(estudio: Estudios):Observable<any> {
+    let params = new HttpParams()
+  .set('titulo', estudio.titulo)
+  .set('institucion', estudio.institucion)
+  .set('logo', estudio.logo)
+  .set('aInicio', estudio.aInicio)
+  .set('aFinal', estudio.aFinal)
+  .set('descripcion', estudio.descripcion)
+  .set('certificado', estudio.certificado);
+    return this.http.put(this.apiURL + "editar/" + estudio.id_estudios, params)
   }
+
 }

@@ -27,7 +27,6 @@ export class ExperienciaFormComponent implements OnInit {
 }
 
 ngOnInit(): void {
-  this.form.valueChanges.subscribe(console.log);
 }
 
 get Cargo() {

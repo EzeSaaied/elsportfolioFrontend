@@ -39,4 +39,12 @@ export class ExperienciaComponent implements OnInit {
     this.newExpButton = !this.newExpButton;
   }
 
+  editExperiencia(experiencia: Experiencia){
+    this.experienciaSvc.editExperiencia(experiencia)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe();
+  }
+
 }
