@@ -3,5 +3,5 @@
     {{estudio.institucion}}<br>
     {{estudio.certificado}}
     <fa-icon class="edit-button" [icon]="faSquarePen"></fa-icon>
-    <fa-icon class="del-button" [icon]="faSquareXmark"></fa-icon>
+    <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(estudio)"></fa-icon>
 </div>

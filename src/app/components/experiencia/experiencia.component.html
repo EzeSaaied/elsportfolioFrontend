@@ -1,2 +1,4 @@
-<app-experiencia-item *ngFor="let experienciaActual of experiencia" [experiencia] = "experienciaActual" >
+<h1>EXPERIENCIA</h1>
+<app-experiencia-form></app-experiencia-form>
+<app-experiencia-item *ngFor="let experienciaActual of experiencia" [experiencia] = "experienciaActual" (onDeleteExperiencia)="deleteExperiencia($event)">
 </app-experiencia-item>

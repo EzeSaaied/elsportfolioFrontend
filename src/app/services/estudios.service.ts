@@ -17,12 +17,12 @@ export class EstudiosService {
     return this.http.get<Estudios[]>(this.publicApiURL);
   }
 
-  deleteEstudio(id_estudio: number):Observable<unknown> {
-    return this.http.delete(this.apiURL + "borrar/" + id_estudio);
+  deleteEstudio(estudio: Estudios):Observable<any> {
+    return this.http.delete(this.apiURL + "borrar/" + estudio.id_estudios);
   }
 
-  createEstudio(estudio: Estudios):Observable<Estudios> {
-    return this.http.post<Estudios>(this.apiURL + "crear", estudio);
+  createEstudio(estudio: any):Observable<any> {
+    return this.http.post(this.apiURL + "crear", estudio);
   }
 
   updateEstudio(estudio: Estudios): Observable<Estudios> {

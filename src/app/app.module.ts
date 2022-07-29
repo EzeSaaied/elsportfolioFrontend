@@ -20,6 +20,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InterceptorService } from './services/interceptor.service';
 import { SkillsFormComponent } from './components/skills-form/skills-form.component';
+import { ProyectosFormComponent } from './components/proyectos-form/proyectos-form.component';
+import { ExperienciaFormComponent } from './components/experiencia-form/experiencia-form.component';
+import { EstudiosFormComponent } from './components/estudios-form/estudios-form.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { SkillsFormComponent } from './components/skills-form/skills-form.compon
     ExperienciaItemComponent,
     LoginComponent,
     SkillsFormComponent,
+    ProyectosFormComponent,
+    ExperienciaFormComponent,
+    EstudiosFormComponent,
   ],
   imports: [
     BrowserModule,

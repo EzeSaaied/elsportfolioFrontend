@@ -22,4 +22,13 @@ export class ExperienciaComponent implements OnInit {
     .subscribe();
   }
 
+  deleteExperiencia(exp: Experiencia){
+    this.experienciaSvc.deleteExperiencia(exp)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe(
+      () => (this.experiencia = this.experiencia.filter( e => e.id_experiencia !== exp.id_experiencia)));
+  }
+
 }

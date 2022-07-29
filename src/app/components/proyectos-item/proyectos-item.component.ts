@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Proyectos } from '../../interfaces/proyectos.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
@@ -14,10 +14,15 @@ export class ProyectosItemComponent implements OnInit {
   faSquareXmark = faSquareXmark;
 
   @Input() proyecto!: Proyectos;
+  @Output() onDeleteProyecto: EventEmitter<Proyectos> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(proyecto: Proyectos) {
+    this.onDeleteProyecto.emit(proyecto);
   }
 
 }

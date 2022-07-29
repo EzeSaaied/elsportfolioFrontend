@@ -16,4 +16,12 @@ export class ProyectosService {
   getProyectos():Observable<Proyectos[]>{
     return this.http.get<Proyectos[]>(this.publicApiURL);
   }
+
+  deleteProyecto(proyecto: Proyectos):Observable<any> {
+    return this.http.delete(this.apiURL + "borrar/" + proyecto.id_proyectos);
+  }
+
+  createProyecto(proyecto: any):Observable<any> {
+    return this.http.post(this.apiURL + "crear", proyecto);
+  }
 }

@@ -23,8 +23,11 @@ export class SkillsComponent implements OnInit {
   }
 
   deleteSkill(skill: Skills){
-    console.log(skill + "SKILL COMPONENT");
-    this.skillsSvc.deleteSkill(skill).subscribe(
+    this.skillsSvc.deleteSkill(skill)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe(
       () => (this.skills = this.skills.filter( s => s.id_skills !== skill.id_skills)));
   }
 

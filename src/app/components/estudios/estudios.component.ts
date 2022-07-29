@@ -22,4 +22,13 @@ export class EstudiosComponent implements OnInit {
     .subscribe();
   }
 
+  deleteEstudio(estudio: Estudios){
+    this.estudiosSvc.deleteEstudio(estudio)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe(
+      () => (this.estudios = this.estudios.filter( e => e.id_estudios !== estudio.id_estudios)));
+  }
+
 }

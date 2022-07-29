@@ -22,4 +22,14 @@ export class ProyectosComponent implements OnInit {
     .subscribe();
   }
 
+  deleteProyecto(proyecto: Proyectos){
+    this.proyectosSvc.deleteProyecto(proyecto)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe(
+      () => (this.proyectos = this.proyectos.filter( p => p.id_proyectos !== proyecto.id_proyectos)));
+    
+  }
+
 }

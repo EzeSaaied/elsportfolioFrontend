@@ -1,2 +1,4 @@
-<app-estudios-item *ngFor="let estudioActual of estudios" [estudio] = "estudioActual" >
+<h1>ESTUDIOS</h1>
+<app-estudios-form></app-estudios-form>
+<app-estudios-item *ngFor="let estudioActual of estudios" [estudio] = "estudioActual" (onDeleteEstudio)="deleteEstudio($event)">
 </app-estudios-item>

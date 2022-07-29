@@ -1,2 +1,4 @@
-<app-proyectos-item *ngFor="let proyectoActual of proyectos" [proyecto] = "proyectoActual" >
+<h1>PROYECTOS</h1>
+<app-proyectos-form></app-proyectos-form>
+<app-proyectos-item *ngFor="let proyectoActual of proyectos" [proyecto] = "proyectoActual" (onDeleteProyecto)="deleteProyecto($event)">
 </app-proyectos-item>
