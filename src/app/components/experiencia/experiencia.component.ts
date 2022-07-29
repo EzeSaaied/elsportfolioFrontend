@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from '../../interfaces/experiencia.interface'
 import { ExperienciaService } from '../../services/experiencia.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
 @Component({
@@ -12,7 +13,7 @@ export class ExperienciaComponent implements OnInit {
 
   experiencia: Experiencia[] = [];
 
-  constructor(private experienciaSvc: ExperienciaService) { }
+  constructor(private experienciaSvc: ExperienciaService, protected authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.experienciaSvc.getExperiencia()

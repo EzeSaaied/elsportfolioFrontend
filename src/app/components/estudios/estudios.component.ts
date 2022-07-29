@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudios } from '../../interfaces/estudios.interface'
 import { EstudiosService } from '../../services/estudios.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
 @Component({
@@ -12,7 +13,7 @@ export class EstudiosComponent implements OnInit {
 
   estudios: Estudios[] = [];
 
-  constructor(private estudiosSvc: EstudiosService) { }
+  constructor(private estudiosSvc: EstudiosService, protected authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.estudiosSvc.getEstudios()

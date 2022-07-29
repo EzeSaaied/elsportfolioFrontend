@@ -1,4 +1,4 @@
 <h1>HABILIDADES</h1>
-<app-skills-form></app-skills-form>
+<app-skills-form *ngIf="authSvc.isLoggedIn()"></app-skills-form>
 <app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" (onDeleteSkill)="deleteSkill($event)">
 </app-skills-item>

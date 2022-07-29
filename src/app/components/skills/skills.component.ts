@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/interfaces/skills.interface';
-import { SkillsService } from '../../services/skills.service'
-import { tap } from "rxjs/operators"
+import { SkillsService } from '../../services/skills.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +13,7 @@ export class SkillsComponent implements OnInit {
 
   skills: Skills[] = [];
 
-  constructor(private skillsSvc: SkillsService) {}
+  constructor(private skillsSvc: SkillsService, protected authSvc: AuthService) {}
 
   ngOnInit(): void {
     this.skillsSvc.getSkills()

@@ -1,11 +1,12 @@
 <div class="top-menu">
   <div id="arg-prog-cont"><img src="https://i.postimg.cc/W4shQh2c/APLogo.png" id="arg-prog-logo"></div>
   <ul id="menu">
-  <li><app-menu-button link="" text="Inicio" (btnClick)="UwU()"></app-menu-button></li>
-    <li><app-menu-button link="estudios" text="Estudios" (btnClick)="UwU()"></app-menu-button></li>
-    <li><app-menu-button link="skills" text="Skills" (btnClick)="UwU()"></app-menu-button></li>
-    <li><app-menu-button link="experiencia" text="Experiencia" (btnClick)="UwU()"></app-menu-button></li>
-    <li><app-menu-button link="proyectos" text="Proyectos" (btnClick)="UwU()"></app-menu-button></li>
+  <li><app-menu-button link="" text="Inicio"></app-menu-button></li>
+    <li><app-menu-button link="estudios" text="Estudios"></app-menu-button></li>
+    <li><app-menu-button link="skills" text="Skills"></app-menu-button></li>
+    <li><app-menu-button link="experiencia" text="Experiencia"></app-menu-button></li>
+    <li><app-menu-button link="proyectos" text="Proyectos"></app-menu-button></li>
   </ul>
-  <div class="login-btn-cont"><a href="login" id="login-btn">Log In</a></div>
+  <div *ngIf="!authSvc.isLoggedIn()" class="login-btn-cont"><a href="login" id="login-btn">Log In</a></div>
+  <div *ngIf="authSvc.isLoggedIn()" class="login-btn-cont"><div id="login-btn" (click)="authSvc.LogOut()">Log Out</div></div>
 </div>

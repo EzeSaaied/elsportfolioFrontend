@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
   url = "http://localhost:8080/public/auth"
   currentUserSubject: BehaviorSubject<any>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     console.log('AuthService');
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || "{}"));
   }
@@ -36,5 +37,12 @@ export class AuthService {
     else {
       return false;
     }
+  }
+
+  LogOut() {
+    sessionStorage.removeItem('currentUser');
+    location.reload();
+    /*this.router.navigate(["/"]);*/
+    console.log("logout");
   }
 }

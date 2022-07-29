@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyectos } from '../../interfaces/proyectos.interface'
 import { ProyectosService } from '../../services/proyectos.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
 @Component({
@@ -12,7 +13,7 @@ export class ProyectosComponent implements OnInit {
 
   proyectos: Proyectos[] = [];
 
-  constructor(private proyectosSvc: ProyectosService) { }
+  constructor(private proyectosSvc: ProyectosService, protected authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.proyectosSvc.getProyectos()
