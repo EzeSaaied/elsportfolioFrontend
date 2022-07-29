@@ -27,4 +27,14 @@ export class AuthService {
   get UsuarioAutenticado() {
     return this.currentUserSubject.value; 
   }
+
+  isLoggedIn() {
+    var currentUser = this.UsuarioAutenticado;
+    if (currentUser && currentUser.jwtToken) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }

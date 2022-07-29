@@ -2,6 +2,8 @@
     {{experiencia.cargo}} <br>
     {{experiencia.empresa}}<br>
     {{experiencia.descripcion}}
+</div>
+<div *ngIf="authSvc.isLoggedIn()">
     <fa-icon class="edit-button" [icon]="faSquarePen"></fa-icon>
     <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(experiencia)"></fa-icon>
 </div>

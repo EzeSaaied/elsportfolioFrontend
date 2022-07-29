@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Estudios } from '../../interfaces/estudios.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-estudios-item',
@@ -17,7 +18,7 @@ export class EstudiosItemComponent implements OnInit {
   @Output() onDeleteEstudio: EventEmitter<Estudios> = new EventEmitter();
 
 
-  constructor() { }
+  constructor(protected authSvc: AuthService) { }
 
   ngOnInit(): void {
   }

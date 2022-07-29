@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Proyectos } from '../../interfaces/proyectos.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-proyectos-item',
@@ -16,7 +17,7 @@ export class ProyectosItemComponent implements OnInit {
   @Input() proyecto!: Proyectos;
   @Output() onDeleteProyecto: EventEmitter<Proyectos> = new EventEmitter();
 
-  constructor() { }
+  constructor(protected authSvc: AuthService) { }
 
   ngOnInit(): void {
   }

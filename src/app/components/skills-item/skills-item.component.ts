@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Skills } from '../../interfaces/skills.interface';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-skills-item',
@@ -16,7 +17,7 @@ export class SkillsItemComponent implements OnInit {
   @Input() skill!: Skills;
   @Output() onDeleteSkill: EventEmitter<Skills> = new EventEmitter();
 
-  constructor() { }
+  constructor(protected authSvc: AuthService) { }
 
   ngOnInit(): void {
   }
