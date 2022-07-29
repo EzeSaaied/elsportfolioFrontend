@@ -3,8 +3,8 @@
     {{skill.maestria}} <br>
     {{skill.tipo}}<br>
     {{skill.logo}}
-    <div *ngIf="authSvc.isLoggedIn()">
-        <fa-icon class="edit-button" [icon]="faSquarePen"></fa-icon>
-        <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(skill)"></fa-icon>
-    </div>
+</div>
+<div *ngIf="authSvc.isLoggedIn()">
+    <fa-icon class="edit-button" [icon]="faSquarePen"></fa-icon>
+    <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(skill)"></fa-icon>
 </div>
