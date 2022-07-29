@@ -11,6 +11,8 @@ import { tap } from 'rxjs/operators'
 })
 export class ProyectosComponent implements OnInit {
 
+  newProyectoButton = false;  
+
   proyectos: Proyectos[] = [];
 
   constructor(private proyectosSvc: ProyectosService, protected authSvc: AuthService) { }
@@ -31,6 +33,9 @@ export class ProyectosComponent implements OnInit {
     .subscribe(
       () => (this.proyectos = this.proyectos.filter( p => p.id_proyectos !== proyecto.id_proyectos)));
     
+  }
+  onToggleCreate() {
+    this.newProyectoButton = !this.newProyectoButton;
   }
 
 }

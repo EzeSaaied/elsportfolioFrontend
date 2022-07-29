@@ -11,6 +11,8 @@ import { tap } from 'rxjs/operators'
 })
 export class EstudiosComponent implements OnInit {
 
+  newStudyButton = false;  
+
   estudios: Estudios[] = [];
 
   constructor(private estudiosSvc: EstudiosService, protected authSvc: AuthService) { }
@@ -32,4 +34,8 @@ export class EstudiosComponent implements OnInit {
       () => (this.estudios = this.estudios.filter( e => e.id_estudios !== estudio.id_estudios)));
   }
 
+  onToggleCreate() {
+    this.newStudyButton = !this.newStudyButton;
+  }
+  
 }

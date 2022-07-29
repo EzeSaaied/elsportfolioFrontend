@@ -11,6 +11,8 @@ import { tap } from "rxjs/operators";
 })
 export class SkillsComponent implements OnInit { 
 
+  newSkillButton = false;  
+
   skills: Skills[] = [];
 
   constructor(private skillsSvc: SkillsService, protected authSvc: AuthService) {}
@@ -32,4 +34,8 @@ export class SkillsComponent implements OnInit {
       () => (this.skills = this.skills.filter( s => s.id_skills !== skill.id_skills)));
   }
 
+  onToggleCreate() {
+    this.newSkillButton = !this.newSkillButton;
+  }
+  
 }

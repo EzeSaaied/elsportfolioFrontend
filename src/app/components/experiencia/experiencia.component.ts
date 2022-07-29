@@ -11,6 +11,9 @@ import { tap } from 'rxjs/operators'
 })
 export class ExperienciaComponent implements OnInit {
 
+  
+  newExpButton = false;  
+
   experiencia: Experiencia[] = [];
 
   constructor(private experienciaSvc: ExperienciaService, protected authSvc: AuthService) { }
@@ -30,6 +33,10 @@ export class ExperienciaComponent implements OnInit {
     )
     .subscribe(
       () => (this.experiencia = this.experiencia.filter( e => e.id_experiencia !== exp.id_experiencia)));
+  }
+  
+  onToggleCreate() {
+    this.newExpButton = !this.newExpButton;
   }
 
 }
