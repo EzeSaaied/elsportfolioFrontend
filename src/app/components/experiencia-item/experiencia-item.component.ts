@@ -30,8 +30,8 @@ export class ExperienciaItemComponent implements OnInit {
         cargo: ["", [Validators.required]],
         empresa: ["", [Validators.required]],
         logo: ["", [Validators.required]],
-        aInicio: [0, [Validators.required]],
-        aFinal: [0, [Validators.required]],
+        a_inicio: [0, [Validators.required]],
+        a_final: [0, [Validators.required]],
         descripcion: ["", [Validators.required]]
       }
     )
@@ -56,12 +56,12 @@ export class ExperienciaItemComponent implements OnInit {
     return this.form.get("logo")
   }
   
-  get AInicio() {
-    return this.form.get("aInicio")
+  get A_inicio() {
+    return this.form.get("a_inicio")
   }
   
-  get AFinal() {
-    return this.form.get("aFinal")
+  get A_final() {
+    return this.form.get("a_final")
   }
   
   get Descripcion() {

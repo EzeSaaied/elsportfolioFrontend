@@ -30,8 +30,8 @@ export class EstudiosService {
   .set('titulo', estudio.titulo)
   .set('institucion', estudio.institucion)
   .set('logo', estudio.logo)
-  .set('aInicio', estudio.aInicio)
-  .set('aFinal', estudio.aFinal)
+  .set('a_inicio', estudio.a_inicio)
+  .set('a_final', estudio.a_final)
   .set('descripcion', estudio.descripcion)
   .set('certificado', estudio.certificado);
     return this.http.put(this.apiURL + "editar/" + estudio.id_estudios, params)

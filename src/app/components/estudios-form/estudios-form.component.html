@@ -34,30 +34,30 @@
             </p>
         </div>
         <div>
-            <label for="aInicio">
+            <label for="a_inicio">
                 Año de Inicio:
             </label>
-            <input formControlName = "aInicio" type="number" name="aInicio" min="1996" max="2022">
+            <input formControlName = "a_inicio" type="number" name="a_inicio" min="1996" max="2022">
         </div>
-        <div *ngIf="AInicio?.errors && AInicio?.touched" class="error-msg">
-            <p *ngIf="AInicio?.hasError('required')">
+        <div *ngIf="A_inicio?.errors && A_inicio?.touched" class="error-msg">
+            <p *ngIf="A_inicio?.hasError('required')">
                 El año de inicio es requerido.
             </p>
-            <p *ngIf="AInicio?.hasError('min') || AInicio?.hasError('max')">
+            <p *ngIf="A_inicio?.hasError('min') || A_inicio?.hasError('max')">
                 El año de inicio debe ser entre 1996 y 2022.
             </p>
         </div>
         <div>
-            <label for="aFinal">
+            <label for="a_final">
                 Año de Finalizacion:
             </label>
-            <input formControlName = "aFinal" type="number" name="aFinal" min="1996" max="2022">
+            <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022">
         </div>
-        <div *ngIf="AFinal?.errors && AFinal?.touched" class="error-msg">
-            <p *ngIf="AFinal?.hasError('required')">
+        <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
+            <p *ngIf="A_final?.hasError('required')">
                 El año de finalizacion es requerido.
             </p>
-            <p *ngIf="AFinal?.hasError('min') || AFinal?.hasError('max')">
+            <p *ngIf="A_final?.hasError('min') || A_final?.hasError('max')">
                 El año de finalicacion debe ser entre 1996 y 2022.
             </p>
         </div>

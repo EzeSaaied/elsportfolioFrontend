@@ -29,8 +29,8 @@ export class ProyectosService {
     let params = new HttpParams()
   .set('nombre', proyecto.nombre)
   .set('descripcion', proyecto.descripcion)
-  .set('aInicio', proyecto.aInicio)
-  .set('aFinal', proyecto.aFinal)
+  .set('a_inicio', proyecto.a_inicio)
+  .set('a_final', proyecto.a_final)
   .set('url', proyecto.url);
     return this.http.put(this.apiURL + "editar/" + proyecto.id_proyectos, params)
   }

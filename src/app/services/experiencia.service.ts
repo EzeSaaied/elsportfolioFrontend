@@ -30,8 +30,8 @@ export class ExperienciaService {
   .set('cargo', exp.cargo)
   .set('empresa', exp.empresa)
   .set('logo', exp.logo)
-  .set('aInicio', exp.aInicio)
-  .set('aFinal', exp.aFinal)
+  .set('a_inicio', exp.a_inicio)
+  .set('a_final', exp.a_final)
   .set('descripcion', exp.descripcion);
     return this.http.put(this.apiURL + "editar/" + exp.id_experiencia, params)
   }

@@ -3,7 +3,7 @@ export interface Experiencia {
     cargo: string;
     empresa: string;
     logo: string;
-    aInicio: number;
-    aFinal: number;
+    a_inicio: number;
+    a_final: number;
     descripcion: string;
 }

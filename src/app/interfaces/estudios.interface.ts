@@ -3,8 +3,8 @@ export interface Estudios {
     titulo: string;
     institucion: string;
     logo: string;
-    aInicio: number;
-    aFinal: number;
+    a_inicio: number;
+    a_final: number;
     descripcion: string;
     certificado: string;
 }

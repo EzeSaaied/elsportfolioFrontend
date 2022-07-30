@@ -29,8 +29,8 @@ export class ProyectosItemComponent implements OnInit {
       {
         nombre: ["", [Validators.required]],
         descripcion: ["", [Validators.required]],
-        aInicio: [0, [Validators.required]],
-        aFinal: [0, [Validators.required]],
+        a_inicio: [0, [Validators.required]],
+        a_final: [0, [Validators.required]],
         url: ["", [Validators.required]]
       }
     )
@@ -51,12 +51,12 @@ export class ProyectosItemComponent implements OnInit {
     return this.form.get("descripcion")
   }
 
-  get AInicio() {
-    return this.form.get("aInicio")
+  get A_inicio() {
+    return this.form.get("a_inicio")
   }
 
-  get AFinal() {
-    return this.form.get("aFinal")
+  get A_final() {
+    return this.form.get("a_final")
   }
 
   get Url() {
