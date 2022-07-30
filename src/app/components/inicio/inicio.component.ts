@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { Inicio } from '../../interfaces/inicio.interface';
+import { InicioService } from 'src/app/services/inicio.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +13,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  inicio!: Inicio;
 
-  ngOnInit(): void {
+  faSquarePen = faSquarePen;
+
+  form: FormGroup;
+
+  editInicioButton = false;
+
+  constructor(private formBuilder: FormBuilder, private inicioSvc: InicioService, protected authSvc: AuthService) {
+
+    this.form = this.formBuilder.group(
+      {
+        profilepic: ["", [Validators.required]],
+        titulo: ["", [Validators.required]],
+        aboutme: ["", [Validators.required]],
+      }
+    )
   }
 
+  ngOnInit(): void {
+    this.inicioSvc.getInicio()
+    .pipe(
+      tap( inicio => this.inicio = inicio[0])
+    )
+    .subscribe();
+  }
+
+  editInicio(inicio: Inicio){
+    this.inicioSvc.editInicio(inicio)
+    .pipe(
+      tap( response => console.log(response.response))
+    )
+    .subscribe();
+  }
+
+  onToggleEdit() {
+    this.editInicioButton = !this.editInicioButton;
+  }
+
+  get Profilepic() {
+    return this.form.get("profilepic")
+  }
+  
+  get Titulo() {
+    return this.form.get("titulo")
+  }
+  
+  get Aboutme() {
+    return this.form.get("aboutme")
+  }
 }

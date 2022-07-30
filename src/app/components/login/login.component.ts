@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, protected authService: AuthService, private router: Router) {
 
     this.form = this.formBuilder.group(
       {

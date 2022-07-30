@@ -1,15 +1,57 @@
 <div class="inicio-cont">
     <div class="inicio-banner">
         <div class="inicio-text">
+            <p>{{inicio.profilepic}}</p>
             <h1>Bienvenidos! <br>Soy Ezequiel Lopez Saaied</h1>
-            <p>Full Stack Developer Jr.</p>
+            <p>{{inicio.titulo}}</p>
+            <fa-icon class="edit-button" [icon]="faSquarePen" (click)="onToggleEdit()" *ngIf="authSvc.isLoggedIn()"></fa-icon>
+
+        </div>
+        <div class="aboutme-bg">
+            <div class="aboutme-cont">
+                <h2>Sobre mi</h2>
+                <p>{{inicio.aboutme}}</p>
+                <fa-icon class="edit-button" [icon]="faSquarePen" (click)="onToggleEdit()" *ngIf="authSvc.isLoggedIn()"></fa-icon>
+
+            </div>
         </div>
     </div>
-    <div class="aboutme-cont">
-        <h2>Sobre mi</h2>
-        <p>Soy de Mar del Plata, Argentina y tengo 26 años.
-            Aficionado a las computadoras desde pequeño,
-            con el tiempo me llevo a aprenender programacion por diversion y en diferentes lenguajes como Python, Javascript y Ruby.
-            Soy alguien creativo que le encanta encontrar nuevos desafios y aprender cosas nuevas.</p>
-    </div>
+    <div *ngIf="editInicioButton && authSvc.isLoggedIn()" class="inicio-form">
+        <form [formGroup]="form" (ngSubmit)="editInicio(inicio)">
+            <div class="form-field">
+                <label for="profilepic">
+                    Foto de Perfil:
+                </label>
+                <input formControlName = "profilepic" type="url" name="profilepic" [(ngModel)]="inicio.profilepic">
+            </div>
+            <div *ngIf="Profilepic?.errors && Profilepic?.touched" class="error-msg">
+                <p *ngIf="Profilepic?.hasError('required')">
+                    La foto de perfil es requerida.
+                </p>
+            </div>
+            <div class="form-field">
+                <label for="titulo">
+                    Titulo:
+                </label>
+                <input formControlName = "titulo" type="text" name="titulo" [(ngModel)]="inicio.titulo">
+            </div>
+            <div *ngIf="Titulo?.errors && Titulo?.touched" class="error-msg">
+                <p *ngIf="Titulo?.hasError('required')">
+                    El titulo es requerida.
+                </p>
+            </div>
+            <div class="form-field">
+                <label for="aboutme">
+                    Sobre mi:
+                </label>
+                <textarea formControlName = "aboutme" name="aboutme" [(ngModel)]="inicio.aboutme"></textarea>
+            </div>
+            <div *ngIf="Aboutme?.errors && Aboutme?.touched" class="error-msg">
+                <p *ngIf="Aboutme?.hasError('required')">
+                    La seccion Sobre Mi es requerida.
+                </p>
+            </div>
+        </form>
+    </div>    
 </div>
+    

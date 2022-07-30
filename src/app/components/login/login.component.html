@@ -1,5 +1,8 @@
 <div class="form-cont">
     <form [formGroup]="form" class="form" (ngSubmit)="onLogin($event)">
+        <div *ngIf="authService.loginError" class="input-cont error-msg error-auth">
+            <p>Credenciales incorrectas, por favor intente de nuevo.</p>
+        </div>
         <div class="input-cont">
             <label for="username">
                 Username:

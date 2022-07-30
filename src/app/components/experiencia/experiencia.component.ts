@@ -11,7 +11,6 @@ import { tap } from 'rxjs/operators'
 })
 export class ExperienciaComponent implements OnInit {
 
-  
   newExpButton = false;  
 
   experiencia: Experiencia[] = [];
