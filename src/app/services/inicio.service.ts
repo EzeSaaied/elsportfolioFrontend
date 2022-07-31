@@ -8,8 +8,8 @@ import { Inicio } from '../interfaces/inicio.interface';
 })
 export class InicioService {
 
-  private publicApiURL = "http://localhost:8080/public/traer/inicio";
-  private apiURL = "http://localhost:8080/api/inicio/";
+  private publicApiURL = "https://arcane-shore-42736.herokuapp.com/public/traer/inicio";
+  private apiURL = "https://arcane-shore-42736.herokuapp.com/api/inicio/";
 
   constructor(private http: HttpClient) { }
 

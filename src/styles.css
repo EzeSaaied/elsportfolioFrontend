@@ -7,6 +7,10 @@
     font-family: 'Kalam', cursive;
 }
 
+body {
+    background-color: #1C0C5B;
+}
+
 .del-button {
     font-size: 25px;
     color: red;

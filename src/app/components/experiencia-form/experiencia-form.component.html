@@ -51,7 +51,7 @@
             <label for="a_final">
                 Año de Finalizacion:
             </label>
-            <input formControlName = "a_Final" type="number" name="a_final" min="1996" max="2022">
+            <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022">
         </div>
         <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
             <p *ngIf="A_final?.hasError('required')">

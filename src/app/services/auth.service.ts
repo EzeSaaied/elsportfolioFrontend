@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  url = "http://localhost:8080/public/auth"
+  url = "https://arcane-shore-42736.herokuapp.com/public/auth"
   currentUserSubject: BehaviorSubject<any>;
  loginError = false;
 

@@ -8,8 +8,8 @@ import { Proyectos } from '../interfaces/proyectos.interface'
 })
 export class ProyectosService {
 
-  private publicApiURL = "http://localhost:8080/public/traer/proyectos";
-  private apiURL = "http://localhost:8080/api/proyectos/";
+  private publicApiURL = "https://arcane-shore-42736.herokuapp.com/public/traer/proyectos";
+  private apiURL = "https://arcane-shore-42736.herokuapp.com/api/proyectos/";
 
   constructor(private http: HttpClient) { }
 
