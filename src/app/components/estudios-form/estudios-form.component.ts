@@ -19,8 +19,8 @@ export class EstudiosFormComponent implements OnInit {
         titulo: ["", [Validators.required]],
         institucion: ["", [Validators.required]],
         logo: ["", [Validators.required]],
-        a_inicio: [0, [Validators.required, Validators.min(1996), Validators.max(2022)]],
-        a_final: [0, [Validators.required, Validators.min(1996), Validators.max(2022)]],
+        a_inicio: [1996, [Validators.required, Validators.min(1996), Validators.max(2022)]],
+        a_final: [2022, [Validators.required, Validators.min(1996), Validators.max(2022)]],
         descripcion: ["", [Validators.required]],
         certificado: ["", [Validators.required]]
       }

@@ -1,5 +1,6 @@
-<h1>ESTUDIOS</h1> <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()">Nuevo Estudio</button>
+<button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()" class="new-input-button">Nuevo Estudio<fa-icon class="del-button plus-sign" [icon]="faSquarePlus"></fa-icon></button>
 <app-estudios-form *ngIf="authSvc.isLoggedIn() && newStudyButton"></app-estudios-form>
+<h1 class="title">FORMACION ACADEMICA</h1>
 <app-estudios-item *ngFor="let estudioActual of estudios" [estudio] = "estudioActual" 
 (onDeleteEstudio)="deleteEstudio($event)" 
 (onEditEstudio)="editEstudio($event)">

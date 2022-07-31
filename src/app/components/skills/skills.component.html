@@ -1,6 +1,16 @@
-<h1>HABILIDADES</h1> <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()">Nueva Habilidad</button>
+<button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()" class="new-input-button">Nueva Habilidad<fa-icon class="del-button plus-sign" [icon]="faSquarePlus"></fa-icon></button>
 <app-skills-form *ngIf="authSvc.isLoggedIn() && newSkillButton"></app-skills-form>
-<app-skills-item *ngFor="let skillActual of skills" [skill] = "skillActual" 
-(onDeleteSkill)="deleteSkill($event)" 
-(onEditSkill)="editSkill($event)">
-</app-skills-item>
+<h1 class="title">HARD SKILLS</h1>
+<div class="skills-cont">
+    <app-skills-item *ngFor="let skillActual of filterHardSkills()" [skill] = "skillActual" 
+    (onDeleteSkill)="deleteSkill($event)" 
+    (onEditSkill)="editSkill($event)">
+    </app-skills-item>
+</div>
+<h1 class="title">SOFT SKILLS</h1> 
+<div class="skills-cont">
+    <app-skills-item *ngFor="let skillActual of filterSoftSkills()" [skill] = "skillActual" 
+    (onDeleteSkill)="deleteSkill($event)" 
+    (onEditSkill)="editSkill($event)">
+    </app-skills-item>
+</div>

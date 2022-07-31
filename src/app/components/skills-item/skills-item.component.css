@@ -1,7 +1,99 @@
 .skills-item {
-    border: 1px solid #000000;
-    font-family: 'Kalam', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px groove #3D2C8D;
+    border-radius: 20px;
     margin: 5px;
     padding: 5px;
-    background-color: #f0f0f0;
+    width: 150px;
+    height: 250px;
+    background-color: #916BBF;
+    box-shadow: 2px 2px 5px 2px black;
+}
+
+.open-editor {
+    width: 350px;
+}
+
+.loggedin {
+    height: 250px;
+}
+
+.skills-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px groove #3D2C8D;
+    background-color: white;
+}
+
+.skills-name {
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 0 3px #000, 0 0 5px #000;
+    margin: 10px 0px;
+    height: 55px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-maestria-cont {
+    background-color: #3D2C8D;
+    width: 120px;
+    height: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 3px #000;
+    border: 1px groove white;
+    border-radius: 10px;
+}
+
+.skills-maestria {
+    background-color: white;
+    margin: 1px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #000;
+}
+
+
+
+.form-cont {
+    padding: 5px 0px;
+}
+
+.input-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    color: white;
+    text-shadow: 0 0 3px #000, 0 0 5px #000;
+}
+
+input, select {
+    width: 170px;
+    background-color: #3D2C8D;
+    color: white;
+    border: 1px solid white;
+    border-radius: 9px;;
+    text-shadow: 0 0 3px #000, 0 0 5px #000;
+    text-align: center;
+    box-shadow: 0px 0px 3px #000;
 }

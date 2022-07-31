@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { Inicio } from '../../interfaces/inicio.interface';
 import { InicioService } from 'src/app/services/inicio.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,7 +15,7 @@ export class InicioComponent implements OnInit {
 
   inicio!: Inicio;
 
-  faSquarePen = faSquarePen;
+  faSquarePlus = faSquarePlus;
 
   form: FormGroup;
 
@@ -46,6 +46,7 @@ export class InicioComponent implements OnInit {
       tap( response => console.log(response.response))
     )
     .subscribe();
+    this.editInicioButton = !this.editInicioButton;
   }
 
   onToggleEdit() {

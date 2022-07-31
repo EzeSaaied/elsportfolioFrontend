@@ -1,90 +1,88 @@
-<div class="form-cont">
-    <form [formGroup]="form" (ngSubmit)="onCreate($event)">
-        <div>
-            <label for="titulo">
-                Titulo:
-            </label>
-            <input formControlName = "titulo" type="text" name="titulo">
-        </div>
-        <div *ngIf="Titulo?.errors && Titulo?.touched" class="error-msg">
-            <p *ngIf="Titulo?.hasError('required')">
-                El titulo es requerido.
-            </p>
-        </div>
-        <div>
-            <label for="institucion">
-                Institucion:
-            </label>
-            <input formControlName = "institucion" type="text" name="institucion">
-        </div>
-        <div *ngIf="Institucion?.errors && Institucion?.touched" class="error-msg">
-            <p *ngIf="Institucion?.hasError('required')">
-                La institucion es requerida.
-            </p>
-        </div>
-        <div>
-            <label for="logo">
-                Logo:
-            </label>
-            <input formControlName = "logo" type="url" name="logo">
-        </div>
-        <div *ngIf="Logo?.errors && Logo?.touched" class="error-msg">
-            <p *ngIf="Logo?.hasError('required')">
-                El logo es requerido.
-            </p>
-        </div>
-        <div>
-            <label for="a_inicio">
-                Año de Inicio:
-            </label>
-            <input formControlName = "a_inicio" type="number" name="a_inicio" min="1996" max="2022">
-        </div>
-        <div *ngIf="A_inicio?.errors && A_inicio?.touched" class="error-msg">
-            <p *ngIf="A_inicio?.hasError('required')">
-                El año de inicio es requerido.
-            </p>
-            <p *ngIf="A_inicio?.hasError('min') || A_inicio?.hasError('max')">
-                El año de inicio debe ser entre 1996 y 2022.
-            </p>
-        </div>
-        <div>
-            <label for="a_final">
-                Año de Finalizacion:
-            </label>
-            <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022">
-        </div>
-        <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
-            <p *ngIf="A_final?.hasError('required')">
-                El año de finalizacion es requerido.
-            </p>
-            <p *ngIf="A_final?.hasError('min') || A_final?.hasError('max')">
-                El año de finalicacion debe ser entre 1996 y 2022.
-            </p>
-        </div>
-        <div>
-            <label for="descripcion">
-                Descripcion:
-            </label>
-            <input formControlName = "descripcion" type="text" name="descripcion">
-        </div>
-        <div *ngIf="Descripcion?.errors && Descripcion?.touched" class="error-msg">
-            <p *ngIf="Descripcion?.hasError('required')">
-                La descripcion es requerida.
-            </p>
-        </div>
-        <div>
-            <label for="certificado">
-                Certificado:
-            </label>
-            <input formControlName = "certificado" type="url" name="certificado">
-        </div>
-        <div *ngIf="Certificado?.errors && Certificado?.touched" class="error-msg">
-            <p *ngIf="Certificado?.hasError('required')">
-                La habilidad es requerida.
-            </p>
-        </div>
-        <div>
-            <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid">
-        </div>
-    </form>
-</div>
+<form [formGroup]="form" (ngSubmit)="onCreate($event)"  class="form-new">
+    <div class="cont-input-new">
+        <label for="titulo">
+            Titulo:
+        </label>
+        <input formControlName = "titulo" type="text" name="titulo" class="input-new">
+    </div>
+    <div *ngIf="Titulo?.errors && Titulo?.touched" class="error-msg">
+        <p *ngIf="Titulo?.hasError('required')">
+            El titulo es requerido.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="institucion">
+            Institucion:
+        </label>
+        <input formControlName = "institucion" type="text" name="institucion" class="input-new">
+    </div>
+    <div *ngIf="Institucion?.errors && Institucion?.touched" class="error-msg">
+        <p *ngIf="Institucion?.hasError('required')">
+            La institucion es requerida.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="logo">
+            Logo:
+        </label>
+        <input formControlName = "logo" type="url" name="logo" class="input-new">
+    </div>
+    <div *ngIf="Logo?.errors && Logo?.touched" class="error-msg">
+        <p *ngIf="Logo?.hasError('required')">
+            El logo es requerido.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="a_inicio">
+            Año de Inicio:
+        </label>
+        <input formControlName = "a_inicio" type="number" name="a_inicio" min="1996" max="2022" class="input-new">
+    </div>
+    <div *ngIf="A_inicio?.errors && A_inicio?.touched" class="error-msg">
+        <p *ngIf="A_inicio?.hasError('required')">
+            El año de inicio es requerido.
+        </p>
+        <p *ngIf="A_inicio?.hasError('min') || A_inicio?.hasError('max')">
+            El año de inicio debe ser entre 1996 y 2022.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="a_final">
+            Año de Finalizacion:
+        </label>
+        <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022" class="input-new">
+    </div>
+    <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
+        <p *ngIf="A_final?.hasError('required')">
+            El año de finalizacion es requerido.
+        </p>
+        <p *ngIf="A_final?.hasError('min') || A_final?.hasError('max')">
+            El año de finalicacion debe ser entre 1996 y 2022.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="descripcion">
+            Descripcion:
+        </label>
+        <textarea formControlName = "descripcion" name="descripcion" class="input-new"></textarea>
+    </div>
+    <div *ngIf="Descripcion?.errors && Descripcion?.touched" class="error-msg">
+        <p *ngIf="Descripcion?.hasError('required')">
+            La descripcion es requerida.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <label for="certificado">
+            Certificado:
+        </label>
+        <input formControlName = "certificado" type="url" name="certificado" class="input-new">
+    </div>
+    <div *ngIf="Certificado?.errors && Certificado?.touched" class="error-msg">
+        <p *ngIf="Certificado?.hasError('required')">
+            La habilidad es requerida.
+        </p>
+    </div>
+    <div class="cont-input-new">
+        <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid" class="input-new">
+    </div>
+</form>

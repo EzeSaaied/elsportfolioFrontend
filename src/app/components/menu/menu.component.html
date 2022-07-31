@@ -7,6 +7,6 @@
     <li><app-menu-button link="experiencia" text="Experiencia"></app-menu-button></li>
     <li><app-menu-button link="proyectos" text="Proyectos"></app-menu-button></li>
   </ul>
-  <div *ngIf="!authSvc.isLoggedIn()" class="login-btn-cont"><a href="login" id="login-btn">Log In</a></div>
-  <div *ngIf="authSvc.isLoggedIn()" class="login-btn-cont"><div id="login-btn" (click)="authSvc.LogOut()">Log Out</div></div>
+  <div *ngIf="!authSvc.isLoggedIn()" class="logx-btn-cont"><a href="login" class="logx-btn glow">Log In</a></div>
+  <div *ngIf="authSvc.isLoggedIn()" class="logx-btn-cont"><div class="logx-btn glow-logout" (click)="authSvc.LogOut()">Log Out</div></div>
 </div>

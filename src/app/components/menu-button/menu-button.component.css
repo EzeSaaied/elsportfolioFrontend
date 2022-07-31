@@ -7,8 +7,20 @@
     margin-left: 5px;
     height: 50px;
     width: 110px;
-    color: #3D2C8D;
+    color: white;
+    text-shadow: 0 0 5px #000, 0 0 7px #000;
     font-weight: bold;
     font-size: 1.1em;
-    background-color: #916BBF;
+    border-bottom: 2px solid #3D2C8D;
+    border-top: 2px solid #3D2C8D;
+}
+
+.glow {
+    border-color: #916BBF;
+    box-shadow: 0 0 40px 40px #916BBF inset, 0 0 0 0 #916BBF;
+    transition: all 150ms ease-in-out;
+}
+
+.glow:hover {
+    box-shadow: 0 0 10px 0 #916BBF inset, 0 0 10px 4px #916BBF;
 }

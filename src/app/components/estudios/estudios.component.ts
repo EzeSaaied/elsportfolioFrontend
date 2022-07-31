@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudios } from '../../interfaces/estudios.interface'
 import { EstudiosService } from '../../services/estudios.service';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
@@ -11,6 +12,8 @@ import { tap } from 'rxjs/operators'
 })
 export class EstudiosComponent implements OnInit {
 
+  faSquarePlus = faSquarePlus;
+  
   newStudyButton = false;  
 
   estudios: Estudios[] = [];

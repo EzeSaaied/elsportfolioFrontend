@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from '../../interfaces/experiencia.interface'
 import { ExperienciaService } from '../../services/experiencia.service';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
@@ -10,6 +11,8 @@ import { tap } from 'rxjs/operators'
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
+
+  faSquarePlus = faSquarePlus;
 
   newExpButton = false;  
 

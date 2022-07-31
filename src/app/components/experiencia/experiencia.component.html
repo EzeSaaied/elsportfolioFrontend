@@ -1,5 +1,6 @@
-<h1>EXPERIENCIA</h1> <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()">Nueva Experiencia</button>
+<button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()" class="new-input-button">Nueva Experiencia<fa-icon class="del-button plus-sign" [icon]="faSquarePlus"></fa-icon></button>
 <app-experiencia-form *ngIf="authSvc.isLoggedIn() && newExpButton"></app-experiencia-form>
+<h1 class="title">EXPERIENCIA LABORAL</h1>
 <app-experiencia-item *ngFor="let experienciaActual of experiencia" [experiencia] = "experienciaActual" 
 (onDeleteExperiencia)="deleteExperiencia($event)"
 (onEditExperiencia)="editExperiencia($event)">

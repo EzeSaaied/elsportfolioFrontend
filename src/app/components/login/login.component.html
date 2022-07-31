@@ -1,26 +1,26 @@
 <div class="form-cont">
-    <form [formGroup]="form" class="form" (ngSubmit)="onLogin($event)">
+    <form [formGroup]="form"  class="form-new login-form" (ngSubmit)="onLogin($event)">
         <div *ngIf="authService.loginError" class="input-cont error-msg error-auth">
             <p>Credenciales incorrectas, por favor intente de nuevo.</p>
         </div>
-        <div class="input-cont">
+        <div class="cont-input-new">
             <label for="username">
                 Username:
             </label>
             <input formControlName="username" type="text" name="username"
-            [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}">
+            [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}" class="input-new">
         </div>
         <div *ngIf="Username?.errors && Username?.touched" class="input-cont error-msg">
             <p *ngIf="Username?.hasError('required')">
                 El usuario es requerido.
             </p>
         </div>
-        <div class="input-cont">
+        <div class="cont-input-new">
             <label for="password">
                 Password:
             </label>
             <input formControlName="password" type="password" name="password"
-            [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
+            [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}" class="input-new">
         </div>
         <div *ngIf="Password?.errors && Password?.touched" class="input-cont error-msg">
             <p *ngIf="Password?.hasError('required')">
@@ -30,8 +30,8 @@
                 La contraseña debe contener por lo menos 8 caracteres.
             </p>
         </div>
-        <div class="input-cont">
-            <input type="submit" name="submit" value="Login">
+        <div class="cont-input-new">
+            <input type="submit" name="submit" value="Login" class="input-new">
         </div>
     </form>
 </div>

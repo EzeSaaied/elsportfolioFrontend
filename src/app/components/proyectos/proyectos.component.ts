@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proyectos } from '../../interfaces/proyectos.interface'
 import { ProyectosService } from '../../services/proyectos.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { tap } from 'rxjs/operators'
 
 @Component({
@@ -11,6 +12,7 @@ import { tap } from 'rxjs/operators'
 })
 export class ProyectosComponent implements OnInit {
 
+  faSquarePlus = faSquarePlus;
   newProyectoButton = false;  
 
   proyectos: Proyectos[] = [];

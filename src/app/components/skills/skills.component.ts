@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/interfaces/skills.interface';
 import { SkillsService } from '../../services/skills.service';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from "rxjs/operators";
 
@@ -11,6 +12,8 @@ import { tap } from "rxjs/operators";
 })
 export class SkillsComponent implements OnInit { 
 
+  faSquarePlus = faSquarePlus;
+  
   newSkillButton = false;  
 
   skills: Skills[] = [];
@@ -45,5 +48,14 @@ export class SkillsComponent implements OnInit {
     )
     .subscribe();
   }
+
+  filterHardSkills() {
+    return this.skills.filter(skill => skill.tipo == "Hard Skill")
+  }
+
+  filterSoftSkills() {
+    return this.skills.filter(skill => skill.tipo == "Soft Skill")
+  }
+  
   
 }

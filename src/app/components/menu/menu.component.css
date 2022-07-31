@@ -14,6 +14,7 @@
     z-index: 9;
     font-family: 'Kalam', cursive;
     background-color: #3D2C8D;
+    border-bottom: 2px solid #3D2C8D;
 }
 
 #arg-prog-cont {
@@ -38,24 +39,48 @@
     list-style-type: none;
 }
 
-.login-btn-cont {
+.logx-btn-cont {
     height: 50px;
     width: 120px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#login-btn {
+.logx-btn {
     display: block;
     text-align: center;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     height: 30px;
-    width: 100px;
-    background-color: #916BBF;
-    color: #3D2C8D;
+    width: 90px;
+    color: white;
+    text-shadow: 0 0 5px #000, 0 0 7px #000;
     font-weight: bold;
     border-radius: 20px;
-    margin: 10px;
     cursor: pointer;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.glow {
+    border-color: #916BBF;
+    box-shadow: 0 0 40px 40px #916BBF inset, 0 0 0 0 #916BBF;
+    transition: all 150ms ease-in-out;
+}
+
+.glow:hover {
+    box-shadow: 0 0 3px 0 #916BBF inset, 0 0 5px 6px #916BBF;
+}
+
+.glow-logout {
+    border-color: #1C0C5B;
+    background-color: #916BBF;
+    box-shadow: 0 0 40px 40px #1C0C5B inset, 0 0 0 0 #1C0C5B;
+    transition: all 150ms ease-in-out;
+}
+
+.glow-logout:hover {
+    box-shadow: 0 0 3px 0 #1C0C5B inset, 0 0 5px 6px #1C0C5B;
 }

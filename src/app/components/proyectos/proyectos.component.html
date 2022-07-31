@@ -1,5 +1,6 @@
-<h1>PROYECTOS</h1> <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()">Nuevo Proyecto</button>
+<button *ngIf="authSvc.isLoggedIn()" (click)="onToggleCreate()" class="new-input-button">Nuevo Proyecto<fa-icon class="del-button plus-sign" [icon]="faSquarePlus"></fa-icon></button>
 <app-proyectos-form *ngIf="authSvc.isLoggedIn() && newProyectoButton"></app-proyectos-form>
+<h1 class="title">PROYECTOS</h1>
 <app-proyectos-item *ngFor="let proyectoActual of proyectos" [proyecto] = "proyectoActual" 
 (onDeleteProyecto)="deleteProyecto($event)"
 (onEditProyecto)="editProyecto($event)">
