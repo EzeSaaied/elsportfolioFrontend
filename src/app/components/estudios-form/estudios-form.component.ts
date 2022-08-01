@@ -63,7 +63,7 @@ export class EstudiosFormComponent implements OnInit {
     this.estudiosSvc.createEstudio(this.form.value).subscribe(data => {
       console.log(JSON.stringify(data));
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        this.router.navigate(["/experiencia"]);
+        this.router.navigate(["/estudios"]);
     })
   })
   }

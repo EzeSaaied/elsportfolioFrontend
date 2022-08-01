@@ -1,81 +1,83 @@
-<div class="proyectos-item">
-    {{proyecto.nombre}} <br>
-    {{proyecto.descripcion}}<br>
-    {{proyecto.a_inicio}}<br>
-    {{proyecto.a_final}}<br>
-    {{proyecto.url}}
-    <br>
-    <br>
-</div>
-<div *ngIf="editProyectoButton" class="form-cont">
-    <form [formGroup]="form" (ngSubmit)="onEdit(proyecto)">
-        <div>
-            <label for="nombre">
-                Nombre:
-            </label>
-            <input formControlName = "nombre" type="text" name="nombre" [(ngModel)]="proyecto.nombre">
+<div class="proyecto-cont">
+    <div class="proyecto-item">
+        <h2>{{proyecto.nombre}} ({{proyecto.a_inicio}} - {{proyecto.a_final}})</h2>
+        <p>{{proyecto.descripcion}}</p>
+        <a [href]="proyecto.url" class="new-input-button ver-proy-btn" target="_blank">Ver Proyecto</a>
+    </div>
+    <div  class="delete-update-cont du-cont">
+        <div *ngIf="authSvc.isLoggedIn()" class="bg-delete-edit">
+            <fa-icon class="edit-button" [icon]="faSquarePen" (click)="onToggleEdit()"></fa-icon>
         </div>
-        <div *ngIf="Nombre?.errors && Nombre?.touched" class="error-msg">
-            <p *ngIf="Nombre?.hasError('required')">
-                El nombre es requerido.
-            </p>
+        <div *ngIf="authSvc.isLoggedIn()" class="bg-delete-edit">
+            <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(proyecto)"></fa-icon>
         </div>
-        <div>
-            <label for="descripcion">
-                Descripcion:
-            </label>
-            <input formControlName = "descripcion" type="text" name="descripcion" [(ngModel)]="proyecto.descripcion">
-        </div>
-        <div *ngIf="Descripcion?.errors && Descripcion?.touched" class="error-msg">
-            <p *ngIf="Descripcion?.hasError('required')">
-                La descripcion es requerida.
-            </p>
-        </div>
-        <div>
-            <label for="a_inicio">
-                Año de Inicio:
-            </label>
-            <input formControlName = "a_inicio" type="number" name="a_inicio" min="1996" max="2022" [(ngModel)]="proyecto.a_inicio">
-        </div>
-        <div *ngIf="A_inicio?.errors && A_inicio?.touched" class="error-msg">
-            <p *ngIf="A_inicio?.hasError('required')">
-                El año de inicio es requerido.
-            </p>
-            <p *ngIf="A_inicio?.hasError('min') || A_inicio?.hasError('max')">
-                El año de inicio debe ser entre 1996 y 2022.
-            </p>
-        </div>
-        <div>
-            <label for="a_final">
-                Año de Finalizacion:
-            </label>
-            <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022" [(ngModel)]="proyecto.a_final">
-        </div>
-        <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
-            <p *ngIf="A_final?.hasError('required')">
-                El año de finalizacion es requerido.
-            </p>
-            <p *ngIf="A_final?.hasError('min') || A_final?.hasError('max')">
-                El año de finalicacion debe ser entre 1996 y 2022.
-            </p>
-        </div>
-        <div>
-            <label for="url">
-                Url:
-            </label>
-            <input formControlName = "url" type="url" name="url" [(ngModel)]="proyecto.url">
-        </div>
-        <div *ngIf="Url?.errors && Url?.touched" class="error-msg">
-            <p *ngIf="Url?.hasError('required')">
-                La url es requerida.
-            </p>
-        </div>
-        <div>
-            <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid">
-        </div>
-    </form>
-</div>
-<div *ngIf="authSvc.isLoggedIn()">
-    <fa-icon class="edit-button" [icon]="faSquarePen" (click)="onToggleEdit()"></fa-icon>
-    <fa-icon class="del-button" [icon]="faSquareXmark" (click)="onDelete(proyecto)"></fa-icon>
+    </div>
+    <div *ngIf="editProyectoButton">
+        <form [formGroup]="form" (ngSubmit)="onEdit(proyecto)" class="form-new">
+            <div class="cont-input-new">
+                <label for="nombre">
+                    Nombre:
+                </label>
+                <input formControlName = "nombre" type="text" name="nombre" [(ngModel)]="proyecto.nombre" class="input-new">
+            </div>
+            <div *ngIf="Nombre?.errors && Nombre?.touched" class="error-msg">
+                <p *ngIf="Nombre?.hasError('required')">
+                    El nombre es requerido.
+                </p>
+            </div>
+            <div class="cont-input-new">
+                <label for="descripcion">
+                    Descripcion:
+                </label>
+                <input formControlName = "descripcion" type="text" name="descripcion" [(ngModel)]="proyecto.descripcion" class="input-new">
+            </div>
+            <div *ngIf="Descripcion?.errors && Descripcion?.touched" class="error-msg">
+                <p *ngIf="Descripcion?.hasError('required')">
+                    La descripcion es requerida.
+                </p>
+            </div>
+            <div class="cont-input-new">
+                <label for="a_inicio">
+                    Año de Inicio:
+                </label>
+                <input formControlName = "a_inicio" type="number" name="a_inicio" min="1996" max="2022" [(ngModel)]="proyecto.a_inicio" class="input-new">
+            </div>
+            <div *ngIf="A_inicio?.errors && A_inicio?.touched" class="error-msg">
+                <p *ngIf="A_inicio?.hasError('required')">
+                    El año de inicio es requerido.
+                </p>
+                <p *ngIf="A_inicio?.hasError('min') || A_inicio?.hasError('max')">
+                    El año de inicio debe ser entre 1996 y 2022.
+                </p>
+            </div>
+            <div class="cont-input-new">
+                <label for="a_final">
+                    Año de Finalizacion:
+                </label>
+                <input formControlName = "a_final" type="number" name="a_final" min="1996" max="2022" [(ngModel)]="proyecto.a_final" class="input-new">
+            </div>
+            <div *ngIf="A_final?.errors && A_final?.touched" class="error-msg">
+                <p *ngIf="A_final?.hasError('required')">
+                    El año de finalizacion es requerido.
+                </p>
+                <p *ngIf="A_final?.hasError('min') || A_final?.hasError('max')">
+                    El año de finalicacion debe ser entre 1996 y 2022.
+                </p>
+            </div>
+            <div class="cont-input-new">
+                <label for="url">
+                    Url:
+                </label>
+                <input formControlName = "url" type="url" name="url" [(ngModel)]="proyecto.url" class="input-new">
+            </div>
+            <div *ngIf="Url?.errors && Url?.touched" class="error-msg">
+                <p *ngIf="Url?.hasError('required')">
+                    La url es requerida.
+                </p>
+            </div>
+            <div class="cont-input-new">
+                <input type="submit" name="submit" value="Enviar" [disabled]="form.invalid" class="input-new">
+            </div>
+        </form>
+    </div>    
 </div>

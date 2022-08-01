@@ -19,6 +19,8 @@ export class EstudiosItemComponent implements OnInit {
 
   editEstudioButton = false;
 
+  showCert = false;
+
   @Input() estudio!: Estudios;
   @Output() onDeleteEstudio: EventEmitter<Estudios> = new EventEmitter();
   @Output() onEditEstudio: EventEmitter<Estudios> = new EventEmitter();
@@ -80,6 +82,10 @@ export class EstudiosItemComponent implements OnInit {
   
   onToggleEdit() {
     this.editEstudioButton = !this.editEstudioButton;
+  }
+
+  onToggleCert() {
+    this.showCert = !this.showCert;
   }
 
 }
