@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/tpfarg-programa",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
