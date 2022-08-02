@@ -38,12 +38,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(28, 12, 91, 0.7);
+    background-color: rgb(28, 12, 91, 0.6);
+}
+
+p {
+    margin: 5px;
 }
 
 .aboutme-cont {
     text-align: center;
+    width: 80%;
     color: white;
     text-shadow: 0 0 10px #000000, 0 0 5px #000000;
     margin: auto 30px;
+}
+
+@media screen and (max-width: 850px){
+    .inicio-cont {
+        height: calc(100% - 30px);
+    }
+    .inicio-banner {
+        grid-template-columns: auto;
+    }
 }

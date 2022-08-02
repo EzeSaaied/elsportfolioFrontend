@@ -1,3 +1,21 @@
+.open-menu-btn {
+    position: sticky;
+    color: white;
+    font-size: 25px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    background-color: #916BBF;
+    display: none;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    z-index: 9;
+}
+
 .top-menu {
     position: sticky;
     display: flex;
@@ -11,10 +29,9 @@
     left: 0;
     justify-content: center;
     align-items: center;
-    z-index: 9;
-    font-family: 'Kalam', cursive;
+    z-index: 8;
     background-color: #3D2C8D;
-    border-bottom: 2px solid #3D2C8D;
+    border-bottom: 1px solid white;
 }
 
 #arg-prog-cont {
@@ -40,7 +57,7 @@
 }
 
 .logx-btn-cont {
-    height: 50px;
+    height: 44px;
     width: 120px;
     display: flex;
     justify-content: center;
@@ -64,6 +81,10 @@
     font-size: 1.1rem;
 }
 
+.logout-btn {
+    display: inline;
+}
+
 .glow {
     border-color: #916BBF;
     box-shadow: 0 0 40px 40px #916BBF inset, 0 0 0 0 #916BBF;
@@ -83,4 +104,42 @@
 
 .glow-logout:hover {
     box-shadow: 0 0 3px 0 #1C0C5B inset, 0 0 5px 6px #1C0C5B;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+    .open-menu-btn {
+        display: flex;
+    }
+
+    .top-menu {
+        flex-direction: column;
+        height: 230px;
+        display: none;
+        position: fixed;
+    }
+
+    .top-menu-open {
+        display: flex;
+    }
+
+    #menu {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 5px;
+        row-gap: 10px;
+        height: 200px;
+        margin-top: 50px;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
 }

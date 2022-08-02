@@ -1,12 +1,17 @@
-<div class="top-menu">
-  <div id="arg-prog-cont"><img src="https://i.postimg.cc/W4shQh2c/APLogo.png" id="arg-prog-logo"></div>
+<div class="open-menu-btn" (click)="hideMenu()"><fa-icon [icon]="faBars"></fa-icon></div>
+<div class="top-menu" [ngClass]="displayMenu ? 'top-menu-open' : ''">
+  <div id="arg-prog-cont" class="desktop"><img src="https://i.postimg.cc/W4shQh2c/APLogo.png" id="arg-prog-logo"></div>
   <ul id="menu">
-  <li><app-menu-button link="" text="Inicio"></app-menu-button></li>
+    <li><app-menu-button link="" text="Inicio"></app-menu-button></li>
     <li><app-menu-button link="estudios" text="Estudios"></app-menu-button></li>
     <li><app-menu-button link="skills" text="Skills"></app-menu-button></li>
     <li><app-menu-button link="experiencia" text="Experiencia"></app-menu-button></li>
     <li><app-menu-button link="proyectos" text="Proyectos"></app-menu-button></li>
+    <li class="login-btn-mobile mobile">
+      <div *ngIf="!authSvc.isLoggedIn()" class="logx-btn-cont"><a href="login" class="logx-btn glow">Log In</a></div>
+      <div *ngIf="authSvc.isLoggedIn()" class="logx-btn-cont"><div class="logx-btn glow-logout" (click)="authSvc.LogOut()">Log Out</div></div>
+    </li>
   </ul>
-  <div *ngIf="!authSvc.isLoggedIn()" class="logx-btn-cont"><a href="login" class="logx-btn glow">Log In</a></div>
-  <div *ngIf="authSvc.isLoggedIn()" class="logx-btn-cont"><div class="logx-btn glow-logout" (click)="authSvc.LogOut()">Log Out</div></div>
+  <div *ngIf="!authSvc.isLoggedIn()" class="logx-btn-cont"><a href="login" class="logx-btn glow desktop">Log In</a></div>
+  <div *ngIf="authSvc.isLoggedIn()" class="logx-btn-cont"><div class="logx-btn glow-logout logout-btn desktop " (click)="authSvc.LogOut()">Log Out</div></div>
 </div>

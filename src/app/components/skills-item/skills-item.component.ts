@@ -39,7 +39,8 @@ ngOnInit(): void {
 }
 
 onDelete(skill: Skills) {
-  this.onDeleteSkill.emit(skill);
+  if(confirm("Seguro que desea borrar " + this.skill.skill + "?")){
+  this.onDeleteSkill.emit(skill);}
 }
 
 get Skill() {

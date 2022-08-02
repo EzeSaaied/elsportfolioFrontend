@@ -40,7 +40,8 @@ export class ProyectosItemComponent implements OnInit {
   }
 
   onDelete(proyecto: Proyectos) {
-    this.onDeleteProyecto.emit(proyecto);
+    if(confirm("Seguro que desea borrar " + this.proyecto.nombre + "?")){
+    this.onDeleteProyecto.emit(proyecto);}
   }
   
   get Nombre() {

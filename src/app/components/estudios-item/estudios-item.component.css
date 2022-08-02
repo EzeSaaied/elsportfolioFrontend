@@ -18,7 +18,7 @@
 
 .estudios-cont-info {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 30% 70%;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,24 @@
     background-color: white;
 }
 
+
 .cert-img {
     max-width:600px;
     height: auto;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 850px){
+    .estudios-cont-info {
+        grid-template-columns: auto;
+    }
+
+    .show-cert-btn {
+        margin: 20px 0;
+    }
+
+    .cert-img {
+        width: 100%;
+    }
+
 }

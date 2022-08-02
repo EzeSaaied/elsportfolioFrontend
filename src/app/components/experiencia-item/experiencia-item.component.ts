@@ -41,7 +41,8 @@ export class ExperienciaItemComponent implements OnInit {
   }
 
   onDelete(experiencia: Experiencia) {
-    this.onDeleteExperiencia.emit(experiencia);
+    if(confirm("Seguro que desea borrar " + this.experiencia.cargo + "?")){
+    this.onDeleteExperiencia.emit(experiencia);}
   }
 
   get Cargo() {

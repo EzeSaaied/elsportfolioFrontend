@@ -2,14 +2,14 @@
     <div class="estudios-cont-info">
         <div class="estudios-cont-logo">
             <img [src]="estudio.logo" class="estudios-logo">
+            <div class="show-cert-btn">
+                <button class="new-input-button" target="_blank" (click)="onToggleCert()" *ngIf="estudio.certificado !== ' '">Ver Certificado</button>
+            </div>
         </div>
         <div class="estudios-item">
             <h2>{{estudio.titulo}}</h2>
             <p>{{estudio.institucion}} ({{estudio.a_inicio}} - {{estudio.a_final}})</p>
             <p>{{estudio.descripcion}}</p>
-        </div>
-        <div class="estudios-cont-cert">
-            <button class="new-input-button ver-proy-btn" target="_blank" (click)="onToggleCert()" *ngIf="estudio.certificado !== ' '">Ver Certificado</button>
         </div>
     </div>
     <div class="show-cert" *ngIf="showCert">

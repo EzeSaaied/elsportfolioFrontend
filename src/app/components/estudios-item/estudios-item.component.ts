@@ -44,7 +44,8 @@ export class EstudiosItemComponent implements OnInit {
   }
 
   onDelete(estudio: Estudios) {
-    this.onDeleteEstudio.emit(estudio);
+    if(confirm("Seguro que desea borrar " + this.estudio.titulo + "?")){
+    this.onDeleteEstudio.emit(estudio);}
   }
   
   get Titulo() {

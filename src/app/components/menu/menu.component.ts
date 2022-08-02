@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+  faBars = faBars;
+
+  displayMenu = false;
+
   constructor(protected authSvc: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -16,5 +21,9 @@ export class MenuComponent implements OnInit {
 
   onLogOut(){
     this.authSvc.LogOut();
+  }
+
+  hideMenu() {
+    this.displayMenu = !this.displayMenu;
   }
 }
