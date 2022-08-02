@@ -40,6 +40,10 @@
 }
 
 @media screen and (max-width: 850px){
+    .estudios-cont {
+        width: 96%;
+    }
+
     .estudios-cont-info {
         grid-template-columns: auto;
     }

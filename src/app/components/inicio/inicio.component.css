@@ -1,27 +1,25 @@
 .inicio-cont {
-    position: absolute;
-    height: calc(100% - 50px);
     width: 100%;
     background-color: #1C0C5B;
+    display: flex;
+    flex-direction: column;
 }
 
 .inicio-banner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i.postimg.cc/1RqfMMYb/banner-final2.png");
     width: 100%;
-    height: 100%;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
     justify-content: center;
   }
   
 .inicio-text {
     text-align: center;
     color: white;
-    margin: auto 30px;
+    margin: 30px;
     text-shadow: 0 0 10px #000000, 0 0 5px #000000;
 }
 
@@ -50,14 +48,11 @@ p {
     width: 80%;
     color: white;
     text-shadow: 0 0 10px #000000, 0 0 5px #000000;
-    margin: auto 30px;
+    margin: 30px;
 }
 
 @media screen and (max-width: 850px){
     .inicio-cont {
-        height: calc(100% - 30px);
-    }
-    .inicio-banner {
-        grid-template-columns: auto;
+        flex-direction: column;
     }
 }

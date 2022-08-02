@@ -33,6 +33,10 @@
 }
 
 @media screen and (max-width: 850px){
+    .experiencia-cont {
+        width: 96%;
+    }
+
     .experiencia-cont-info {
         grid-template-columns: auto;
     }

@@ -22,7 +22,7 @@ export class InicioComponent implements OnInit {
 
   editInicioButton = false;
 
-  constructor(private formBuilder: FormBuilder, private inicioSvc: InicioService, protected authSvc: AuthService, private spinner: NgxSpinnerService) {
+  constructor(private spinner: NgxSpinnerService, private formBuilder: FormBuilder, private inicioSvc: InicioService, protected authSvc: AuthService) {
 
     this.form = this.formBuilder.group(
       {
