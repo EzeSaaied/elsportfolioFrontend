@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { NgxSpinnerService } from "ngx-spinner";
 import { Inicio } from '../../interfaces/inicio.interface';
 import { InicioService } from 'src/app/services/inicio.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,7 +22,7 @@ export class InicioComponent implements OnInit {
 
   editInicioButton = false;
 
-  constructor(private formBuilder: FormBuilder, private inicioSvc: InicioService, protected authSvc: AuthService) {
+  constructor(private formBuilder: FormBuilder, private inicioSvc: InicioService, protected authSvc: AuthService, private spinner: NgxSpinnerService) {
 
     this.form = this.formBuilder.group(
       {
@@ -33,11 +34,12 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.inicioSvc.getInicio()
     .pipe(
       tap( inicio => this.inicio = inicio[0])
     )
-    .subscribe();
+    .subscribe(() => this.spinner.hide());
   }
 
   editInicio(inicio: Inicio){

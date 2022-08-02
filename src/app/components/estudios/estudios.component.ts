@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Estudios } from '../../interfaces/estudios.interface'
 import { EstudiosService } from '../../services/estudios.service';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
@@ -18,14 +19,15 @@ export class EstudiosComponent implements OnInit {
 
   estudios: Estudios[] = [];
 
-  constructor(private estudiosSvc: EstudiosService, protected authSvc: AuthService) { }
+  constructor(private estudiosSvc: EstudiosService, protected authSvc: AuthService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.estudiosSvc.getEstudios()
     .pipe(
       tap( estudios => this.estudios = estudios)
     )
-    .subscribe();
+    .subscribe(() => this.spinner.hide());
   }
 
   deleteEstudio(estudio: Estudios){

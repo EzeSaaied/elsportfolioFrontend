@@ -3,6 +3,7 @@ import { Proyectos } from '../../interfaces/proyectos.interface'
 import { ProyectosService } from '../../services/proyectos.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { NgxSpinnerService } from "ngx-spinner";
 import { tap } from 'rxjs/operators'
 
 @Component({
@@ -17,14 +18,15 @@ export class ProyectosComponent implements OnInit {
 
   proyectos: Proyectos[] = [];
 
-  constructor(private proyectosSvc: ProyectosService, protected authSvc: AuthService) { }
+  constructor(private proyectosSvc: ProyectosService, protected authSvc: AuthService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.proyectosSvc.getProyectos()
     .pipe(
       tap( proyectos => this.proyectos = proyectos)
     )
-    .subscribe();
+    .subscribe(() => this.spinner.hide());
   }
 
   deleteProyecto(proyecto: Proyectos){

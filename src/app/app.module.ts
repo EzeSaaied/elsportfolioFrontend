@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { SkillsItemComponent } from './components/skills-item/skills-item.compon
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
 import { LoginComponent } from './components/login/login.component';
@@ -49,8 +50,10 @@ import { EstudiosFormComponent } from './components/estudios-form/estudios-form.
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })

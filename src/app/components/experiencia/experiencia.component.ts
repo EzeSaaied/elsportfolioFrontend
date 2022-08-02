@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Experiencia } from '../../interfaces/experiencia.interface'
 import { ExperienciaService } from '../../services/experiencia.service';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from 'rxjs/operators'
 
@@ -18,14 +19,15 @@ export class ExperienciaComponent implements OnInit {
 
   experiencia: Experiencia[] = [];
 
-  constructor(private experienciaSvc: ExperienciaService, protected authSvc: AuthService) { }
+  constructor(private experienciaSvc: ExperienciaService, protected authSvc: AuthService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.experienciaSvc.getExperiencia()
     .pipe(
       tap( experiencia => this.experiencia = experiencia)
     )
-    .subscribe();
+    .subscribe(() => this.spinner.hide());
   }
 
   deleteExperiencia(exp: Experiencia){

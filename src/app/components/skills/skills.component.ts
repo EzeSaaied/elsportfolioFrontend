@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/interfaces/skills.interface';
 import { SkillsService } from '../../services/skills.service';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from 'src/app/services/auth.service';
 import { tap } from "rxjs/operators";
 
@@ -18,14 +19,15 @@ export class SkillsComponent implements OnInit {
 
   skills: Skills[] = [];
 
-  constructor(private skillsSvc: SkillsService, protected authSvc: AuthService) {}
+  constructor(private skillsSvc: SkillsService, protected authSvc: AuthService, private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
+    this.spinner.show();
     this.skillsSvc.getSkills()
     .pipe(
       tap( skills => this.skills = skills)
     )
-    .subscribe();
+    .subscribe(() => this.spinner.hide());
   }
 
   deleteSkill(skill: Skills){
