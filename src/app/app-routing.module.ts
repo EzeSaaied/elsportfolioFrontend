@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'inicio',
     component: InicioComponent,
   },
   {
@@ -31,6 +31,11 @@ const routes: Routes = [
   {
     path: 'proyectos',
     component: ProyectosComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'inicio',
+    pathMatch: "full",
   },
   {
     path: '**',

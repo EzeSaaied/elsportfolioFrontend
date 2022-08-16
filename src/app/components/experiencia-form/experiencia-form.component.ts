@@ -19,8 +19,8 @@ export class ExperienciaFormComponent implements OnInit {
       cargo: ["", [Validators.required]],
       empresa: ["", [Validators.required]],
       logo: ["", [Validators.required]],
-      a_inicio: [1996, [Validators.required]],
-      a_final: [2022, [Validators.required]],
+      a_inicio: [1996, [Validators.required, Validators.min(1996), Validators.max(2022)]],
+      a_final: [2022, [Validators.required, Validators.min(1996), Validators.max(2022)]],
       descripcion: ["", [Validators.required]]
     }
   )

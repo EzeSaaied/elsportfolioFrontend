@@ -14,7 +14,7 @@ import { tap } from 'rxjs/operators'
 })
 export class InicioComponent implements OnInit {
 
-  inicio!: Inicio;
+  inicio: Inicio[] = [];
 
   faSquarePlus = faSquarePlus;
 
@@ -32,12 +32,12 @@ export class InicioComponent implements OnInit {
       }
     )
   }
-
+  
   ngOnInit(): void {
     this.spinner.show();
     this.inicioSvc.getInicio()
     .pipe(
-      tap( inicio => this.inicio = inicio[0])
+      tap( inicio => this.inicio = inicio)
     )
     .subscribe(() => this.spinner.hide());
   }

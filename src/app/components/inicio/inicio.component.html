@@ -1,11 +1,11 @@
 <button *ngIf="authSvc.isLoggedIn()" (click)="onToggleEdit()" class="new-input-button">Editar Inicio<fa-icon class="del-button plus-sign" [icon]="faSquarePlus"></fa-icon></button>
 <div *ngIf="editInicioButton && authSvc.isLoggedIn()" class="inicio-form">
-    <form [formGroup]="form" (ngSubmit)="editInicio(inicio)"  class="form-new">
+    <form [formGroup]="form" (ngSubmit)="editInicio(inicio[0])"  class="form-new">
         <div class="cont-input-new">
             <label for="profilepic">
                 Foto de Perfil:
             </label>
-            <input formControlName = "profilepic" type="url" name="profilepic" [(ngModel)]="inicio.profilepic" class="input-new">
+            <input formControlName = "profilepic" type="url" name="profilepic" [(ngModel)]="inicio[0].profilepic" class="input-new">
         </div>
         <div *ngIf="Profilepic?.errors && Profilepic?.touched" class="error-msg">
             <p *ngIf="Profilepic?.hasError('required')">
@@ -16,7 +16,7 @@
             <label for="titulo">
                 Titulo:
             </label>
-            <input formControlName = "titulo" type="text" name="titulo" [(ngModel)]="inicio.titulo" class="input-new">
+            <input formControlName = "titulo" type="text" name="titulo" [(ngModel)]="inicio[0].titulo" class="input-new">
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched" class="error-msg">
             <p *ngIf="Titulo?.hasError('required')">
@@ -27,7 +27,7 @@
             <label for="aboutme">
                 Sobre mi:
             </label>
-            <textarea formControlName = "aboutme" name="aboutme" [(ngModel)]="inicio.aboutme" class="input-new"></textarea>
+            <textarea formControlName = "aboutme" name="aboutme" [(ngModel)]="inicio[0].aboutme" class="input-new"></textarea>
         </div>
         <div *ngIf="Aboutme?.errors && Aboutme?.touched" class="error-msg">
             <p *ngIf="Aboutme?.hasError('required')">
@@ -42,19 +42,19 @@
 <div class=" inicio-cont">
     <div class="inicio-banner">
         <div class="inicio-text">
-            <img class="inicio-img" [src]="inicio.profilepic"/>
+            <img class="inicio-img" [src]="inicio[0].profilepic"/>
             <h1>Bienvenidos! <br>Soy Ezequiel Lopez Saaied</h1>
-            <p>{{inicio.titulo}}</p>
+            <p>{{inicio[0].titulo}}</p>
        </div>
     </div>
     <div class="aboutme-bg">
         <div class="aboutme-cont">
             <h2>Sobre mi</h2>
-            <p>{{inicio.aboutme}}</p>
+            <p>{{inicio[0].aboutme}}</p>
             <p>Email de contacto: ezequielsaaied@gmail.com</p>
         </div>
     </div>
 </div>
-<ngx-spinner bdColor="rgba(61, 44, 141, 0.9)" color="#916BBF" type="ball-clip-rotate-multiple">  
+<ngx-spinner bdColor="rgba(61, 44, 141, 0.9)" color="#916BBF" type="ball-clip-rotate-multiple" [zIndex]="9800">  
 </ngx-spinner>
     

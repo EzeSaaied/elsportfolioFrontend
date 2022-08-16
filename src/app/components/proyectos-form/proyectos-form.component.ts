@@ -18,8 +18,8 @@ export class ProyectosFormComponent implements OnInit {
       {
         nombre: ["", [Validators.required]],
         descripcion: ["", [Validators.required]],
-        a_inicio: [1996, [Validators.required]],
-        a_final: [2022, [Validators.required]],
+        a_inicio: [1996, [Validators.required, Validators.min(1996), Validators.max(2022)]],
+        a_final: [2022, [Validators.required, Validators.min(1996), Validators.max(2022)]],
         url: ["", [Validators.required]]
       }
     )

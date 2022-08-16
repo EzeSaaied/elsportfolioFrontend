@@ -3,7 +3,6 @@
     color: white;
     font-size: 25px;
     height:30px;
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -13,7 +12,7 @@
     display: none;
     cursor: pointer;
     border-bottom: 1px solid white;
-    z-index: 9;
+    z-index: 9810;
 }
 
 .top-menu {
@@ -29,7 +28,7 @@
     left: 0;
     justify-content: center;
     align-items: center;
-    z-index: 8;
+    z-index: 9805;
     background-color: #3D2C8D;
     border-bottom: 1px solid white;
 }
